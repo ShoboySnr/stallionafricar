@@ -172,7 +172,7 @@ module.exports = {
     'sm': '576px',
     'md': '768px',
     'lg': '992px',
-    'xl': '1200px',
+    'xl': '1170px',
   },
 
 
@@ -930,7 +930,7 @@ module.exports = {
   plugins: [
     require('tailwindcss/plugins/container')({
       center: true,
-      padding: '1rem',
+      padding: '15px',
     }),
   ],
 

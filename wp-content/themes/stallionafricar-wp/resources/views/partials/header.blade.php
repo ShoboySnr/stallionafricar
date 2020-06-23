@@ -1,6 +1,9 @@
 <header class="banner">
   <div class="container">
-    <a class="brand" href="{{ home_url('/') }}">{{ get_bloginfo('name', 'display') }}</a>
+    <a class="brand" href="{{ home_url('/') }}">
+      <img src="<?= get_theme_mod('theme_logo') ?>" alt="{{ get_bloginfo('name', 'display') }}" title="{{ get_bloginfo('name', 'display') }}" 
+      width="<?= get_theme_mod('logo_width') ?>" />
+    </a>
     <nav class="nav-primary">
       @if (has_nav_menu('primary_navigation'))
         {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}

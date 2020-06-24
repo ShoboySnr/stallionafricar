@@ -1,0 +1,15 @@
+.nav-primary {
+  width: auto;
+
+  .nav {
+    list-style: none;
+
+    @apply flex -mx-6;
+
+    a {
+      color: $black;
+
+      @apply mx-6;
+    }
+  }
+}

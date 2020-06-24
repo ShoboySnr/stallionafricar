@@ -19,5 +19,6 @@
     <?php do_action('get_footer') ?>
     <?php echo $__env->make('partials.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <?php wp_footer() ?>
+    <script src="<?= get_template_directory_uri() ?>/assets/owlcarousel/owl.carousel.js"></script>
   </body>
 </html>

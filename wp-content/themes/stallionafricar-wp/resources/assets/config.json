@@ -10,7 +10,7 @@
   },
   "publicPath": "/wp-content/themes/stallionafricar-wp",
   "devUrl": "http://localhost:8888/stallionafricar",
-  "proxyUrl": "http://localhost:3000",
+  "proxyUrl": "http://localhost:3000/stallionafricar",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [
     "app/**/*.php",

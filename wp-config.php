@@ -26,8 +26,8 @@
   return $value;
 }
 
-// $DSN = parse_url(fromenv('DATABASE_URL', 'mysql://be2c3c76d4ce13:b428a5cd@us-cdbr-east-05.cleardb.net/heroku_70bfee49b22f1fe?reconnect=true'));
-$DSN = parse_url(fromenv('DATABASE_URL', 'mysql://root:root@localhost:8888/stallionafricar'));
+$DSN = parse_url(fromenv('DATABASE_URL', 'mysql://be2c3c76d4ce13:b428a5cd@us-cdbr-east-05.cleardb.net/heroku_70bfee49b22f1fe?reconnect=true'));
+// $DSN = parse_url(fromenv('DATABASE_URL', 'mysql://root:root@localhost:8888/stallionafricar'));
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */

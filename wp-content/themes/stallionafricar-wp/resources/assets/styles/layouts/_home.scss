@@ -4,5 +4,8 @@
   .home-bg {
     margin-top: -4.324rem;
     min-height: calc(100vh - 4.324rem);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 }

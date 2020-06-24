@@ -17,7 +17,12 @@ a {
   transition: 0.2s ease;
 }
 
-.button {
+html,
+body {
+  @apply font-Roboto;
+}
+
+.button-white-bg {
   z-index: 5;
   background-color: $white;
   visibility: visible;
@@ -42,4 +47,32 @@ a {
   max-width: none;
   transform-origin: 50% 50%;
   opacity: 1;
+}
+
+.button-transparent-bg {
+  z-index: 10;
+  visibility: visible;
+  text-align: center;
+  line-height: 42px;
+  letter-spacing: 0;
+  font-weight: 500;
+  font-size: 18px;
+  border-color: rgba(30, 30, 30, 0.51);
+  border-style: solid;
+  border-width: 3px;
+  margin: 0;
+  border-radius: 60px;
+  padding: 0 26px;
+  color: $grey;
+  text-decoration: none;
+  white-space: normal;
+  width: 230px;
+  height: 52px;
+  min-height: 0;
+  min-width: 0;
+  max-height: none;
+  max-width: none;
+  transform-origin: 50% 50%;
+  opacity: 1;
+  transform: translate(0, 0);
 }

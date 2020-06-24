@@ -19,5 +19,6 @@
     @php do_action('get_footer') @endphp
     @include('partials.footer')
     @php wp_footer() @endphp
+    <script src="<?= get_template_directory_uri() ?>/assets/owlcarousel/owl.carousel.js"></script>
   </body>
 </html>

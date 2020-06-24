@@ -7,5 +7,25 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    .owl-carousel {
+      .owl-stage-outer {
+        @apply h-full;
+
+        .owl-stage {
+          @apply h-full;
+
+          .owl-item {
+            @apply h-full;
+
+            a {
+              font-size: 1.125rem;
+              font-weight: 500;
+              line-height: 3.437rem;
+            }
+          }
+        }
+      }
+    }
   }
 }

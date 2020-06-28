@@ -22,57 +22,52 @@ body {
   @apply font-Roboto;
 }
 
+button:focus {
+  outline: none;
+}
+
 .button-white-bg {
   z-index: 5;
-  background-color: $white;
   visibility: visible;
   text-align: center;
-  line-height: 55px;
   letter-spacing: 0;
   font-weight: 500;
   font-size: 18px;
   border-color: transparent;
   border-style: none;
-  margin: 0;
   border-radius: 60px;
-  padding: 0 34px;
   color: $grey;
   text-decoration: none;
   white-space: normal;
-  width: 208px;
-  height: 55px;
-  min-height: 0;
-  min-width: 0;
-  max-height: none;
-  max-width: none;
-  transform-origin: 50% 50%;
+  padding: 0 45px;
   opacity: 1;
 }
 
 .button-transparent-bg {
-  z-index: 10;
+  z-index: 5;
   visibility: visible;
   text-align: center;
-  line-height: 42px;
   letter-spacing: 0;
   font-weight: 500;
   font-size: 18px;
-  border-color: rgba(30, 30, 30, 0.51);
+  border-color: $grey;
   border-style: solid;
-  border-width: 3px;
+  border-width: 2px;
   margin: 0;
   border-radius: 60px;
-  padding: 0 26px;
+  padding: 0 45px;
   color: $grey;
+  background-color: $grey;
   text-decoration: none;
-  white-space: normal;
-  width: 230px;
-  height: 52px;
-  min-height: 0;
-  min-width: 0;
-  max-height: none;
-  max-width: none;
-  transform-origin: 50% 50%;
-  opacity: 1;
-  transform: translate(0, 0);
+
+  &:hover {
+    background-color: transparent;
+    color: $black;
+  }
+}
+
+.current_page_item {
+  a {
+    color: $green !important;
+  }
 }

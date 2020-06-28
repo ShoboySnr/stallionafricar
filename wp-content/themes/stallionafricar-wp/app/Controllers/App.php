@@ -30,4 +30,44 @@ class App extends Controller
         }
         return get_the_title();
     }
+
+    public static function homeSlider() {
+        $args = [
+            'numberposts' => 3,
+            'post_type' => 'automobile',
+            'meta_key'		=> 'show_as_homepage_slider',
+            'meta_value'	=> true
+        ];
+        $sliders = get_posts($args);
+
+        return $sliders;
+    }
+
+    public static function getAutomobiles($page = 1) {
+        $args = [
+            'numberposts' => -1,
+            'post_type' => 'automobile',
+            'page' => $page,
+        ];
+
+        $automobiles = get_posts($args);
+
+        return $automobiles;
+    }
+
+    public static function groupByYear() {
+        $years = [];
+        $args = [
+            'posts_per_page' => -1,
+            'post_type' => 'automobile',
+            'meta_key' => 'year_of_manufacture',
+            'meta_value' => null,
+            'meta_compare' => 'NOT',
+            'post_status' => 'publish',
+            'orderby' => 'meta_value',
+            'order' => 'DESC',
+        ];
+        $years = query_posts($args);
+        return $years;
+    }
 }

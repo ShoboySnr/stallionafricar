@@ -26,6 +26,26 @@
           }
         }
       }
+
+      .owl-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+
+        .owl-next {
+          left: calc(100% - 7.187rem);
+          position: relative;
+        }
+
+        .owl-prev {
+          right: -2.187rem;
+          position: relative;
+
+          .arrow-prev {
+            transform: rotate(180deg) !important;
+          }
+        }
+      }
     }
   }
 }

@@ -84,6 +84,51 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+  src:
+    local("Montserrat"),
+    url("../fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-Thin.ttf");
+  src:
+    local("Montserrat-Thin"),
+    url("../fonts/Montserrat/Montserrat-Thin.ttf") format("truetype");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-Medium.ttf");
+  src:
+    local("Montserrat-Medium"),
+    url("../fonts/Montserrat/Montserrat-Thin.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-Light.ttf");
+  src:
+    local("Montserrat-Light"),
+    url("../fonts/Montserrat/Montserrat-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-Bold.ttf");
+  src:
+    local("Montserrat-Bold"),
+    url("../fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
 /** Import theme styles */
 @import "common/global";
 @import "components/buttons";
@@ -98,6 +143,9 @@
 @import "layouts/tinymce";
 @import "layouts/nav";
 @import "layouts/home";
+@import "layouts/single";
+@import "layouts/categories";
+@import "layouts/filter";
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your

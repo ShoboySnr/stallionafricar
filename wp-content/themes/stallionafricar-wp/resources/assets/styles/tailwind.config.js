@@ -232,6 +232,9 @@ module.exports = {
     'Roboto': [
       'Roboto',
     ],
+    'Montserrat': [
+      'Montserrat',
+    ],
   },
 
 

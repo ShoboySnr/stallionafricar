@@ -11,7 +11,7 @@ $automobiles = App::getAutomobiles($page);
 
 $years = App::groupByYear();
 
-var_dump($years);
+// var_dump($years);
 
 
 ?>

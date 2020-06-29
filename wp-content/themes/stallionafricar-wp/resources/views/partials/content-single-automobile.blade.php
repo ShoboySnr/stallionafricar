@@ -13,17 +13,17 @@ $categories = get_the_terms($post->ID, 'automobile_category');
                     <div class="automobile-engine">
                         <div class="flex">
                             <div class="w-full lg:w-1/3 text-center attributes">
-                                <p><strong>5.6</strong><sub>L</sub>
+                                <p><strong><?= get_field('engine', $post); ?></strong><sub><?= get_field('engine_unit', $post); ?></sub>
                                     <br />
                                     Engine </p>
                             </div>
                             <div class="w-full lg:w-1/3 attributes text-center">
-                                <p><strong>7</strong><sub>-Speed AT</sub>
+                                <p><strong><?= get_field('transmission', $post); ?></strong><sub>-<?= get_field('transmission_unit', $post); ?></sub>
                                     <br />
                                     Transmission </p>
                             </div>
                             <div class="w-full lg:w-1/3 attributes text-center">
-                                <p><strong>298</strong><sub>kw@</sub><strong>500</strong><sub>rpm</sub>
+                                <p><strong><?= get_field('power_rpm', $post); ?></strong><sub>kw@</sub><strong><?= get_field('power_horse', $post); ?></strong><sub>rpm</sub>
                                     <br />
                                     Power </p>
                             </div>
@@ -42,10 +42,10 @@ $categories = get_the_terms($post->ID, 'automobile_category');
                             <a class="text-black auto-single-button flex justify-center" href="#specification">Purchase Price: <?= get_field('price', $post) ?></a>
                         </div>
                         <div class="auto-quicklinks w-full">
-                            <a class="text-black auto-single-button flex justify-center" href="#quote">Request for Quote</a>
+                            <a class="text-black auto-single-button flex justify-center"href="#buyform" rel="modal:open">Request for Quote</a>
                         </div>
                         <div class="auto-quicklinks w-full">
-                            <a class="text-black auto-single-button flex justify-center" href="#specification">Book a Test Drive</a>
+                            <a class="text-black auto-single-button flex justify-center" href="#bookRideform"rel="modal:open">Book a Test Drive</a>
                         </div>
                     </div>
                 </div>
@@ -125,3 +125,25 @@ $categories = get_the_terms($post->ID, 'automobile_category');
         </div>
     </div>
 </section>
+
+<div id="buyform" class="modal">
+    <div class="buyform-container">
+      <div class="title">
+        <h3>Request a Quote</h3>
+      </div>
+        <div class="content">
+          <?= do_shortcode(get_field('contact_form', $post->ID)); ?>
+        </div>
+    </div>
+  </div>
+
+  <div id="bookRideform" class="modal">
+    <div class="buyform-container">
+      <div class="title">
+        <h3>Request for Test Drive</h3>
+      </div>
+        <div class="content">
+          <?= do_shortcode(get_field('test_drive_contact', $post->ID)); ?>
+        </div>
+    </div>
+  </div>

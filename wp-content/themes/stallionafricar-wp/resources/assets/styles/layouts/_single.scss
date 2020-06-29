@@ -74,3 +74,25 @@
 .automobile-view {
   padding: 0 5vw 40px;
 }
+
+.automobile-view-container {
+  .owl-nav {
+    position: absolute;
+    top: 33%;
+    width: 100%;
+
+    .owl-next {
+      right: 5px;
+      position: absolute;
+    }
+
+    .owl-prev {
+      left: 5px;
+      position: absolute;
+
+      .arrow-prev {
+        transform: rotate(180deg) !important;
+      }
+    }
+  }
+}

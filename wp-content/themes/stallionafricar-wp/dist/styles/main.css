@@ -1156,10 +1156,13 @@ select:focus {
 /* line 1, resources/assets/styles/layouts/_footer.scss */
 
 footer {
-  height: 4.324rem;
+  height: 77px;
+  position: relative;
+  bottom: -18px;
+  z-index: 10;
 }
 
-/* line 4, resources/assets/styles/layouts/_footer.scss */
+/* line 7, resources/assets/styles/layouts/_footer.scss */
 
 footer p {
   margin-bottom: 0;
@@ -1418,6 +1421,36 @@ body#tinymce {
 
 .automobile-view {
   padding: 0 5vw 40px;
+}
+
+/* line 79, resources/assets/styles/layouts/_single.scss */
+
+.automobile-view-container .owl-nav {
+  position: absolute;
+  top: 33%;
+  width: 100%;
+}
+
+/* line 84, resources/assets/styles/layouts/_single.scss */
+
+.automobile-view-container .owl-nav .owl-next {
+  right: 5px;
+  position: absolute;
+}
+
+/* line 89, resources/assets/styles/layouts/_single.scss */
+
+.automobile-view-container .owl-nav .owl-prev {
+  left: 5px;
+  position: absolute;
+}
+
+/* line 93, resources/assets/styles/layouts/_single.scss */
+
+.automobile-view-container .owl-nav .owl-prev .arrow-prev {
+  -webkit-transform: rotate(180deg) !important;
+       -o-transform: rotate(180deg) !important;
+          transform: rotate(180deg) !important;
 }
 
 /* line 1, resources/assets/styles/layouts/_categories.scss */

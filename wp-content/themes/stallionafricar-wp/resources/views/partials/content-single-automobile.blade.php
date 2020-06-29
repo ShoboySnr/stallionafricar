@@ -39,7 +39,7 @@ $categories = get_the_terms($post->ID, 'automobile_category');
                             <a class="text-black auto-single-button flex justify-center" href="#specification">Specification</a>
                         </div>
                         <div class="auto-quicklinks w-full">
-                            <a class="text-black auto-single-button flex justify-center" href="#specification">Purchase Price: <?= get_field('price', $post) ?></a>
+                            <a class="text-black auto-single-button flex justify-center" href="#specification">Purchase Price: <?= get_theme_mod('currency') ?><?= get_field('price', $post) ?></a>
                         </div>
                         <div class="auto-quicklinks w-full">
                             <a class="text-black auto-single-button flex justify-center"href="#buyform" rel="modal:open">Request for Quote</a>
@@ -56,7 +56,7 @@ $categories = get_the_terms($post->ID, 'automobile_category');
 
 <section id="exterior" class="automobile-view w-screen h-screen relative">
     <div class="automobile-view-container">
-        <div class="flex justify-center items-center flex-col">
+        <div class="flex justify-center items-center flex-col owl-carousel">
             <?php 
                 $exterior = acf_photo_gallery('exterior', $post->ID);
                 if(count($exterior) ):
@@ -74,7 +74,7 @@ $categories = get_the_terms($post->ID, 'automobile_category');
 
 <section id="interior" class="automobile-view w-screen h-screen relative">
     <div class="automobile-view-container">
-        <div class="flex justify-center items-center flex-col">
+        <div class="flex justify-center items-center flex-col owl-carousel">
             <?php 
                 $exterior = acf_photo_gallery('interior', $post->ID);
                 if(count($exterior) ):
@@ -92,7 +92,7 @@ $categories = get_the_terms($post->ID, 'automobile_category');
 
 <section id="top_view" class="automobile-view w-screen h-screen relative">
     <div class="automobile-view-container">
-        <div class="flex justify-center items-center flex-col">
+        <div class="flex justify-center items-center flex-col owl-carousel">
             <?php 
                 $exterior = acf_photo_gallery('top_view', $post->ID);
                 if(count($exterior) ):
@@ -110,7 +110,7 @@ $categories = get_the_terms($post->ID, 'automobile_category');
 
 <section id="side_view" class="automobile-view w-screen h-screen relative">
     <div class="automobile-view-container">
-        <div class="flex justify-center items-center flex-col">
+        <div class="flex justify-center items-center flex-col owl-carousel">
             <?php 
                 $exterior = acf_photo_gallery('side_view', $post->ID);
                 if(count($exterior) ):

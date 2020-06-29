@@ -1,5 +1,8 @@
 footer {
-  height: 4.324rem;
+  height: 77px;
+  position: relative;
+  bottom: -18px;
+  z-index: 10;
 
   p {
     @apply mb-0;

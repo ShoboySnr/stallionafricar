@@ -50,4 +50,16 @@ add_action('customize_register', function ($wp_customize) {
     'description' => 'Manage your contact and social media information',
     'priority' => 110,
     ));
+
+    $wp_customize->add_setting( 'currency' , array(
+        'default' => '',
+        'type' => 'theme_mod',
+    ));
+
+    $wp_customize->add_control( 'currency', array(
+    'label' => __( 'Paste the Currency Symbol Here', '' ),
+    'section' => 'title_tagline',
+    'settings' => 'currency',
+    'type' => 'text'
+    ));
 });

@@ -22,7 +22,8 @@ body {
   @apply font-Roboto;
 }
 
-button:focus {
+button:focus,
+select:focus {
   outline: none;
 }
 
@@ -66,8 +67,15 @@ button:focus {
   }
 }
 
-.current_page_item {
+.current_page_item,
+.current-menu-parent {
   a {
     color: $green !important;
+  }
+}
+
+.current-menu-item {
+  a {
+    color: $black !important;
   }
 }

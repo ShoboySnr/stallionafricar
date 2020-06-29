@@ -10,9 +10,9 @@
 
   <?php endif; ?>
 
-  <?php while(have_posts()): ?> <?php the_post() ?>
+  <?php if(have_posts()): ?> <?php the_post() ?>
     <?php echo $__env->make('partials.content-'.get_post_type(), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-  <?php endwhile; ?>
+  <?php endif; ?>
 
   <?php echo get_the_posts_navigation(); ?>
 

@@ -87,3 +87,143 @@
     }
   }
 }
+
+.service-center-bg {
+  background-color: $grey-6;
+  min-height: 100vh;
+  padding: 92px 0;
+
+  @apply w-screen font-Montserrat;
+
+  .card {
+    padding: 35px 10px;
+    border-radius: 15px;
+
+    @apply bg-white;
+
+    .card-title {
+      margin-bottom: 20px;
+      margin-top: 20px;
+
+      a {
+        text-transform: uppercase;
+        color: $grey-7;
+
+        h2 {
+          font-size: 23px;
+          font-weight: 600;
+          line-height: 30px;
+        }
+
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+  }
+}
+
+.service-center-category {
+  background-color: $grey-6;
+  min-height: 100vh;
+  padding: 92px 0;
+
+  @apply w-screen font-Montserrat;
+
+  .service-center-category-bg {
+    @apply flex justify-center items-center;
+
+    #accordion-bg {
+      width: 100%;
+
+      .accordion-item {
+        margin-bottom: 30px;
+
+        .accordion-heading {
+          font-weight: 500;
+          font-size: 17px;
+          line-height: 1px;
+          color: $black;
+          border-radius: 40px;
+          border-style: solid;
+          border-width: 2px;
+          border-color: $black;
+          background-color: $white;
+          width: 100%;
+          padding: 11px 0;
+
+          p {
+            padding: 0 30px;
+            display: block;
+            position: relative;
+            margin-bottom: 0;
+          }
+        }
+
+        .accordion-content {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          color: $grey-2;
+          padding: 0 30px;
+          line-height: 25px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.buyform-container {
+  @apply flex justify-center flex-col items-center w-full font-Montserrat;
+
+  padding: 5px 10px;
+
+  .title {
+    text-align: center;
+
+    h3 {
+      font-weight: bold;
+      font-size: 17px;
+      text-transform: uppercase;
+      color: $grey-2;
+      line-height: normal;
+    }
+  }
+
+  .content {
+    text-align: center;
+
+    form {
+      label {
+        font-size: 13px;
+        color: $grey-2;
+        margin-bottom: 0.5rem;
+      }
+
+      input {
+        font-size: 16px;
+        background-color: $grey-8;
+        border: none;
+        width: 100%;
+        padding: 5px 10px;
+        color: $grey-2;
+        margin-bottom: 1.5rem;
+        border-radius: 3px;
+        height: 50px;
+      }
+
+      input[type=submit] {
+        color: $white;
+        font-size: 13px;
+        font-weight: 700;
+        background: $grey-9;
+        padding: 0 25px 0 25px;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
+    }
+  }
+}

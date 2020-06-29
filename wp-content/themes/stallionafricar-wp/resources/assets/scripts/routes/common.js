@@ -6,6 +6,23 @@ export default {
       $(this).find('.sub-menu').toggle(400);
       event.preventDefault();
     });
+
+    //toggle service center on click on
+    $('.accordion-item .accordion-heading').click(function(event) {
+      // console.log($(this).parent().find('.active'));
+      $(this).siblings('.accordion-content').slideToggle();
+      $(this).parent().addClass('active');
+      $(this).find('.toggle-icon .plus').toggle();
+      $(this).find('.toggle-icon .minus').toggle();
+      event.preventDefault();
+    });
+
+    $('a[class="fadeTransistion"]').click(function(event) {
+      event.preventDefault();
+      $(this).modal({
+        fadeDuration: 250,
+      });
+    });
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired

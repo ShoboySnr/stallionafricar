@@ -11,7 +11,7 @@ $automobiles = App::getAutomobiles($page);
 
 $years = App::groupByYear();
 
-// var_dump($years);
+$transmissions = App::groupByTransmission();
 
 
 ?>
@@ -26,7 +26,7 @@ $years = App::groupByYear();
             <hr />
             <div class="search-cars py-4 flex justify-center items-center -mx-4">
               <p class="ml-2 mr-6 mb-0">Find cars by: </p>
-              <select name="brand" class="mx-4">
+              <select name="model" class="mx-4" onchange="loadType(this.value, '<?= get_page_link(9) ?>', '<?php  if (isset($_GET['model'])) echo '?model='.$_GET['model'].'&'; else echo '?' ?>category');");>
                 <option value="">Model</option>
                 <?php 
                   foreach ($categories as $category) {
@@ -37,14 +37,14 @@ $years = App::groupByYear();
 
                 <?php } ?>
               </select>
-              <select name="year" class="mx-4">
+              <select name="year_of_manufacture" class="mx-4">
                 <option value="">Year</option>
                 <?php 
-                  foreach ($categories as $category) {
-                    $term_id = $category->term_id;
-                    $name = $category->name;
+                  foreach ($years as $year) {
+                    $id = $year['id'];
+                    $year_of_manufacture = $year['year_of_manufacture'];
                 ?>
-                <option value="<?= get_category_link($term_id); ?>"><?= $name; ?></option>
+                <option value="<?= $year_of_manufacture; ?>"><?= $year_of_manufacture; ?></option>
 
                 <?php } ?>
               </select>
@@ -67,11 +67,12 @@ $years = App::groupByYear();
               <select name="grade" class="mx-4">
                 <option value="">Transmission</option>
                 <?php 
-                  foreach ($categories as $category) {
-                    $term_id = $category->term_id;
-                    $name = $category->name;
+                  foreach ($transmissions as $transmission) {
+                    $id = $transmission['id'];
+                    $value = $transmission['transmission'];
+                    $unit = $transmission['transmission_unit'];
                 ?>
-                <option value="<?= get_category_link($term_id); ?>"><?= $name; ?></option>
+                <option value="<?= $value ?>"><?= $value.' - '.$unit; ?></option>
 
                 <?php } ?>
               </select>
@@ -83,11 +84,19 @@ $years = App::groupByYear();
         <?php 
 
           foreach($automobiles as $automobile) {
+            $engine = get_field('engine', $automobile->ID);
+            $engine_unit = get_field('engine_unit', $automobile->ID);
+            $transmission = get_field('transmission', $automobile->ID);
+            $transmission_unit = get_field('transmission_unit', $automobile->ID);
+            $power_rpm = get_field('power_rpm', $automobile->ID);
+            $power_horse = get_field('power_horse', $automobile->ID);
         ?>
         <div class="w-full lg:w-1/2 mb-10 px-4">
           <div class="card text-center">
             <div class="card-title">
-              <h2><?= $automobile->post_title ?></h2>
+              <a href="<?= get_permalink($automobile->ID); ?>">
+                <h2><?= $automobile->post_title ?></h2>
+              </a>
             </div>
             <div class="card-content">
               <div class="featured-image">
@@ -109,10 +118,10 @@ $years = App::groupByYear();
               </div>
               <div class="attributes">
                 <div class="flex justify-center w-full">
-                  <p class="mx-4"><strong>1.5</strong><sub>L</sub><br />
+                  <p class="mx-4"><strong><?= $engine; ?></strong><sub><?= $engine_unit; ?></sub><br />
                     <span>Engine</span>
                   </p>
-                  <p class="mx-4"><strong>4</strong><sub>-Speed AT</sub><br />
+                  <p class="mx-4"><strong><?= $transmission; ?></strong><sub>-<?= $transmission_unit; ?></sub><br />
                     <span>Transmission</span>
                   </p>
                   <p class="mx-4"><strong>73</strong><sub>kw@</sub><strong>600</strong><sub>rpm</sub><br />
@@ -124,7 +133,7 @@ $years = App::groupByYear();
             <div class="card-action">
               <div class="flex justify-between w-full">
                 <button type="button" class="btn" title="Buy Now">Buy Now</button>
-                <a href="#" class="btn" title="Overview">Overview</a>
+                <a href="<?= get_permalink($automobile->ID); ?>" class="btn" title="Overview">Overview</a>
               </div>
             </div>
           </div>
@@ -141,7 +150,7 @@ $years = App::groupByYear();
 <script type="text/javascript">
 
   function filterAutomobile($model, $year, $grade, $price, $transmission) {
-
+    document.location.href = '';
   }
 </script>
 @endsection

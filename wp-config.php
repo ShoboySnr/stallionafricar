@@ -89,7 +89,7 @@ if ( isset($_SERVER['HTTP_X_FORWARDED_PROTO'] )
     $_SERVER['HTTPS'] = 'on';
 }
 
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
 
 /* That's all, stop editing! Happy publishing. */
 

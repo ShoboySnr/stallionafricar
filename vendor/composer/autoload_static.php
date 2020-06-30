@@ -4,10 +4,11 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit0f04a841b290437e9a75b5e0c08c3fdd
+class ComposerStaticInit57860b6ddc05b382eccb14ddf0cd35a6
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -18,6 +19,7 @@ class ComposerStaticInit0f04a841b290437e9a75b5e0c08c3fdd
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Php73\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
@@ -42,7 +44,6 @@ class ComposerStaticInit0f04a841b290437e9a75b5e0c08c3fdd
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
-            'PhpOption\\' => 10,
         ),
         'I' => 
         array (
@@ -57,8 +58,8 @@ class ComposerStaticInit0f04a841b290437e9a75b5e0c08c3fdd
         ),
         'D' => 
         array (
-            'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Inflector\\' => 19,
             'Doctrine\\Common\\Inflector\\' => 26,
         ),
         'C' => 
@@ -77,6 +78,10 @@ class ComposerStaticInit0f04a841b290437e9a75b5e0c08c3fdd
     );
 
     public static $prefixDirsPsr4 = array (
+        'Symfony\\Polyfill\\Php80\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
+        ),
         'Symfony\\Polyfill\\Php73\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php73',
@@ -149,10 +154,6 @@ class ComposerStaticInit0f04a841b290437e9a75b5e0c08c3fdd
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
-        'PhpOption\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
-        ),
         'Illuminate\\View\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/view',
@@ -185,13 +186,13 @@ class ComposerStaticInit0f04a841b290437e9a75b5e0c08c3fdd
         array (
             0 => __DIR__ . '/..' . '/illuminate/config',
         ),
-        'Dotenv\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
-        ),
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
+        ),
+        'Doctrine\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector',
         ),
         'Doctrine\\Common\\Inflector\\' => 
         array (
@@ -476,6 +477,8 @@ class ComposerStaticInit0f04a841b290437e9a75b5e0c08c3fdd
         'Squiz_Sniffs_WhiteSpace_ScopeKeywordSpacingSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/ScopeKeywordSpacingSniff.php',
         'Squiz_Sniffs_WhiteSpace_SemicolonSpacingSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/SemicolonSpacingSniff.php',
         'Squiz_Sniffs_WhiteSpace_SuperfluousWhitespaceSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/SuperfluousWhitespaceSniff.php',
+        'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+        'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'Zend_Sniffs_Debug_CodeAnalyzerSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/Debug/CodeAnalyzerSniff.php',
         'Zend_Sniffs_Files_ClosingTagSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/Files/ClosingTagSniff.php',
         'Zend_Sniffs_NamingConventions_ValidVariableNameSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/NamingConventions/ValidVariableNameSniff.php',
@@ -484,10 +487,10 @@ class ComposerStaticInit0f04a841b290437e9a75b5e0c08c3fdd
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit0f04a841b290437e9a75b5e0c08c3fdd::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit0f04a841b290437e9a75b5e0c08c3fdd::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit0f04a841b290437e9a75b5e0c08c3fdd::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit0f04a841b290437e9a75b5e0c08c3fdd::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit57860b6ddc05b382eccb14ddf0cd35a6::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit57860b6ddc05b382eccb14ddf0cd35a6::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit57860b6ddc05b382eccb14ddf0cd35a6::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit57860b6ddc05b382eccb14ddf0cd35a6::$classMap;
 
         }, null, ClassLoader::class);
     }

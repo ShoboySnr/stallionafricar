@@ -1,3 +1,13 @@
+### 2.1.2:
+* Fixes
+
+### 2.1.1:
+* Update Brain/Hierarchy to 2.4.0 for CPT templates [#86](https://github.com/soberwp/controller/issues/86)
+* Add filter sober/controller/sage/namespace to allow for a custom Sage namespace [#104](https://github.com/soberwp/controller/issues/104)
+* Update ACF class to support taxonomy fields by default by using get_queried_object() [#101](https://github.com/soberwp/controller/issues/101)
+* Bug fix for ACF class if no fields on page/post [#102](https://github.com/soberwp/controller/issues/102)
+* Allow interaction in Controller with the $post object by using $this->post vs $this->data['post']
+
 ### 2.1.0:
 * Update deps
 * Pass in field data from Acf Options under App class

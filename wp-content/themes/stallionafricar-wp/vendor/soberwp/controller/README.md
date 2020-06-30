@@ -7,14 +7,14 @@ WordPress package to enable a controller when using Blade with [Sage](https://ro
 * [Usage](#usage)
     * [Overview](#overview)
     * [Basic Controller](#basic-controller)
-    * [Using functions](#using-static-methods)
-    * [Using components](#creating-components)
-    * [Inheriting the tree/hierarchy](#inheriting-the-treehierarchy)
-    * [Creating global properties](#creating-global-properties)
-    * [Advanced Custom Fields module](#advanced-custom-fields-module)
-    * [Template override option](#template-override-option)
+    * [Using Functions](#using-functions)
+    * [Using Components](#using-components)
+    * [Inheriting the Tree/Hierarchy](#inheriting-the-treehierarchy)
+    * [Creating Global Properties](#creating-global-properties)
+    * [Advanced Custom Fields Module](#advanced-custom-fields-module)
+    * [Template Override Option](#template-override-option)
     * [Lifecycles](#lifecycles)
-    * [Disable option](#disable-option)
+    * [Disable Option](#disable-option)
 * [Blade Debugger](#blade-debugger)
 * [Blade Coder](#blade-coder)
 
@@ -27,7 +27,7 @@ WordPress package to enable a controller when using Blade with [Sage](https://ro
 [Sage](https://roots.io/sage/) ships with Controller. However, should you need to install, browse into the Sage theme directory and run;
 
 ```shell
-$ composer require soberwp/controller:2.1.0
+$ composer require soberwp/controller:2.1.2
 ```
 
 ### Upgrading to 2.x.x:
@@ -147,7 +147,7 @@ class Archive extends Controller
 
 @section('content')
 
-  @while (have_posts()) @php(the_post())
+  @while (have_posts()) @php the_post() @endphp
     {{ Archive::title() }}
   @endwhile
 
@@ -280,6 +280,8 @@ class Single extends Controller
 }
 ```
 
+Clone fields will return the value of each the fields in a separate variable, unless the _Prefix Field Names_ option is enabled in which case the the cloned fields will be returned in an object with the field name given to the clone field.
+
 The values are returned as objects, however you can disable this to keep them as arrays.
 
 ```php
@@ -287,7 +289,6 @@ add_filter('sober/controller/acf/array', function () {
     return true;
 });
 ```
-
 
 ### Template Override Option;
 
@@ -349,16 +350,16 @@ To wrap the code in if statements, use `@codeif`
 * `@codeif`
 * `@codeif('__name of variable as string__')`
 
+## Support
+
+* Follow [@withjacoby](https://twitter.com/withjacoby) on Twitter
+* Buy me a beer or pay my rent, [paypal.me/darrenjacoby](https://paypal.me/darrenjacoby)
+
 ## Updates
 
-* Change the composer.json version to 2.1.0
+* Change the composer.json version to 2.1.2
 * Check [CHANGELOG.md](CHANGELOG.md) for any breaking changes before updating.
 
 ```shell
 $ composer update
 ```
-
-## Other
-
-* For updates follow [@withjacoby](https://twitter.com/withjacoby)
-* You can also [hire me](mailto:darren@jacoby.co.za) for WordPress or frontend work

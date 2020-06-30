@@ -41,8 +41,7 @@
     "ext-mbstring": "*",
     "ext-gd": "*",
     "ext-bcmath": "*",
-    "ext-exif": "*",
-    "vlucas/phpdotenv": "^4.1"
+    "ext-exif": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.8.0",

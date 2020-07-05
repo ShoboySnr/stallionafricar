@@ -43,12 +43,91 @@ class App extends Controller
         return $sliders;
     }
 
-    public static function getAutomobiles($page = 1) {
+    public static function getPosts() {
+        $args = [
+            'numberposts' => -1,
+        ];
+        $posts = get_posts($args);
+
+        return $posts;
+    }
+
+    public static function getSearchAutomobiles($page = 1, $auto) {
         $args = [
             'numberposts' => -1,
             'post_type' => 'automobile',
             'page' => $page,
+            's' => $auto,
+            'post_status' => 'publish',
+            'order' => 'DESC'
         ];
+
+        $automobiles = get_posts($args);
+
+        return $automobiles;
+    }
+
+    public static function getAutomobiles($page = 1, $filterData = []) {
+        $model = $filterData['model'];
+        $year = $filterData['year_of_manufacture'];
+        $grade = $filterData['grade'];
+        $price = $filterData['price'];
+        $transmission = $filterData['transmission'];
+
+        if($year != '' || $model != '' || $year != '' || $grade != '' || $transmission != '') {
+            $args = [
+                'numberposts' => -1,
+                'post_type' => 'automobile',
+                'page' => $page,
+                'tax_query' => [
+                    [
+                        'taxonomy' => 'automobile_category',
+                        'field' => 'term_id',
+                        'terms' => $model
+                    ]
+                ],
+                'meta_query' => [
+                    'relation' => 'AND',
+                    [
+                        'key' => 'year_of_manufacture',
+                        'value' => $year,
+                        'compare' => 'LIKE'
+                    ],
+                    [
+                        'key' => 'year_of_manufacture',
+                        'compare' => 'EXISTS'
+                    ],
+                    [
+                        'key' => 'transmission',
+                        'value' => $transmission,
+                        'compare' => 'LIKE'
+                    ],
+                    [
+                        'key' => 'transmission',
+                        'compare' => 'EXISTS'
+                    ],
+                    [
+                        'key' => 'grade_star',
+                        'value' => $grade,
+                        'compare' => 'LIKE'
+                    ],
+                    [
+                        'key' => 'grade_star',
+                        'compare' => 'EXISTS'
+                    ],
+                ],
+                'post_status' => 'publish',
+                'orderby'   => 'purchase_price',
+                'order'	    => $price == '' ? 'DESC' : $price,
+            ];
+        }
+        else {
+            $args = [
+                'numberposts' => -1,
+                'post_type' => 'automobile',
+                'page' => $page,
+            ];
+        }
 
         $automobiles = get_posts($args);
 
@@ -121,7 +200,7 @@ class App extends Controller
            $transmission_full_value = $transmission_value.' - '.$transmission_unit;
 
            if ($selected != $transmission_full_value) {
-            $returnyears[] = [
+            $returnTransmission[] = [
                 'transmission' => $transmission_value,
                 'id' => $transmission->ID,
                 'transmission_unit' => $transmission_unit,
@@ -130,7 +209,7 @@ class App extends Controller
             $selected = $transmission_full_value;
         }
 
-        return $returnyears;
+        return $returnTransmission;
     }
 
     public static function getServiceCenter($page = 1) {

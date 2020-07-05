@@ -1,3 +1,48 @@
 .banner {
   padding: 0 0;
+
+  .mobile-nav {
+    width: 75vw;
+    height: calc(100vh + 4.324rem);
+    position: fixed;
+    right: -100%;
+    top: -10px;
+    background-color: $white;
+    padding-top: 83px;
+    transition: 0.7s ease;
+
+    @apply font-Montserrat;
+
+    .menu-primary-menu-container {
+      width: 100%;
+
+      .nav {
+        flex-direction: column;
+      }
+    }
+  }
+
+  .open {
+    span {
+      &:nth-child(1) {
+        top: 10px;
+        transform: rotate(135deg) !important;
+        transition: 0.7s ease;
+        background: $white;
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+        right: 100px;
+        background: $white;
+      }
+
+      &:nth-child(3) {
+        top: -10px;
+        transform: rotate(-135deg) !important;
+        transition: 0.7s ease;
+        background: $white;
+      }
+    }
+  }
 }

@@ -20,10 +20,13 @@ a {
 html,
 body {
   @apply font-Roboto;
+
+  overflow-x: hidden;
 }
 
 button:focus,
-select:focus {
+select:focus,
+input {
   outline: none;
 }
 
@@ -62,7 +65,7 @@ select:focus {
   text-decoration: none;
 
   &:hover {
-    background-color: transparent;
+    background-color: $white;
     color: $black;
   }
 }
@@ -78,4 +81,9 @@ select:focus {
   a {
     color: $black !important;
   }
+}
+
+.modal {
+  z-index: 999999 !important;
+  margin-top: 91px;
 }

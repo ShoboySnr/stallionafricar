@@ -1,12 +1,27 @@
 #home-slider {
   display: flex;
+  margin-top: -4.324rem;
+  min-height: calc(100vh + 4.324rem);
 
   .home-bg {
-    margin-top: -4.324rem;
-    min-height: calc(100vh - 4.324rem);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    .bg-slider {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .action-group {
+      position: relative;
+      top: 180px;
+
+      a {
+        margin-bottom: 20px;
+      }
+    }
 
     .owl-carousel {
       .owl-stage-outer {
@@ -35,6 +50,10 @@
         .owl-next {
           left: calc(100% - 7.187rem);
           position: relative;
+
+          @media screen and (max-width: 992px) {
+            left: calc(100% - 6.187rem);
+          }
         }
 
         .owl-prev {
@@ -43,6 +62,10 @@
 
           .arrow-prev {
             transform: rotate(180deg) !important;
+          }
+
+          @media screen and (max-width: 992px) {
+            right: -1.187rem;
           }
         }
       }

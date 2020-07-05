@@ -6,12 +6,24 @@
 
     @apply flex -mx-6;
 
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+    }
+
+    .menu-item-has-children {
+      & > a::after {
+        color: $black;
+        content: " ▾";
+      }
+    }
+
     li {
       padding: 1.85rem 0;
 
       a {
         padding: 1.85rem 0;
         color: $black;
+        font-size: 14px;
 
         @apply mx-6;
       }
@@ -48,6 +60,93 @@
           }
         }
       }
+    }
+  }
+}
+
+#nav-menu {
+  width: 33px;
+  height: 33px;
+  padding: 5px;
+  cursor: pointer;
+  position: relative;
+  float: right;
+  right: 0;
+  z-index: 1;
+
+  span {
+    cursor: pointer;
+    height: 2px;
+    width: 33px;
+    margin-bottom: 8px;
+    background: #000;
+    position: relative;
+    right: 0;
+    display: block;
+    transform: rotate(0deg);
+    transition: 0.7s ease;
+  }
+}
+
+.slideInLeft {
+  animation-duration: 0.5s;
+}
+
+.slideOutLeft {
+  animation-duration: 0.5s;
+}
+
+.hide-menu {
+  opacity: 0;
+  pointer-events: none;
+  animation-duration: 0.5s;
+  cursor: default;
+  right: -100% !important;
+}
+
+.show-menu {
+  opacity: 1;
+  right: 0 !important;
+  animation-duration: 0.5s;
+}
+
+.top-link {
+  transition: all 0.25s ease-in-out;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3em 3em 0;
+  border-radius: 50%;
+  padding: 0.25em;
+  width: 80px;
+  height: 80px;
+  background-color: $grey-2;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.hide {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  svg {
+    fill: $black;
+    width: 24px;
+    height: 12px;
+  }
+
+  &:hover {
+    background-color: $grey-2;
+
+    svg {
+      fill: $black;
     }
   }
 }

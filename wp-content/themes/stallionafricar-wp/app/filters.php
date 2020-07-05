@@ -89,3 +89,18 @@ add_filter('comments_template', function ($comments_template) {
 
     return $comments_template;
 }, 100);
+
+
+/**
+ * Add Search Bar
+ */
+add_filter('wp_nav_menu_items', function ($items, $args) {
+    if(!is_admin() && ($args->theme_location == 'primary_navigation' || $args->theme_location == 'autombile_navigation' || $args->theme_location == 'mobile_navigation'))
+        return $items."<li id='menu-item-search' class='menu-item menu-item-type-custom menu-item-object-custom menu-item-search search-icon hidden lg:block' style='margin-left:0;margin-right:0;padding-right:0;'><a href='#searchform' rel='modal:open'>
+        <svg width='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <path d='M0.749971 6.58824C0.749971 9.79741 3.41294 12.4265 6.73221 12.4265C10.0515 12.4265 12.7144 9.79741 12.7144 6.58824C12.7144 3.37907 10.0515 0.75 6.73221 0.75C3.41294 0.75 0.749971 3.37907 0.749971 6.58824Z' stroke='black' stroke-width='1.5'/>
+        <line y1='-0.75' x2='6.72825' y2='-0.75' transform='matrix(0.714709 0.699422 0.714709 -0.699422 11.541 11.2941)' stroke='black' stroke-width='1.5'/>
+        </svg></a></li>";
+ 
+    return $items;
+}, 10, 2);

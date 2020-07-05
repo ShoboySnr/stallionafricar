@@ -14,10 +14,10 @@
           $id = $slider->ID;
           $categories = get_the_terms($id, 'automobile_category');
       ?>
-      <div class="w-full h-full" style="background-image: url('<?= get_the_post_thumbnail_url($id) ?>');">
+      <div class="w-full h-full bg-slider" style="background-image: url('<?= get_the_post_thumbnail_url($id) ?>');">
         <div class="container h-full">
-          <div class="flex justify-center items-center h-full w-full">
-            <div class="action-group flex -mx-6">
+          <div class="flex action-group justify-center items-start h-full w-full">
+            <div class="flex -mx-6 flex-col md:flex-row">
               <a href="<?= get_permalink($id) ?>" class="button-white-bg bg-white text-black mx-6"><?= $slider->post_title ?></a>
               <a href="<?= get_category_link($categories[0]->term_id) ?>" class="button-transparent-bg text-white mx-6">Other Model</a>
             </div>

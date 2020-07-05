@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.
@@ -805,16 +807,18 @@ a {
 html,
 body {
   font-family: Roboto;
+  overflow-x: hidden;
 }
 
-/* line 25, resources/assets/styles/common/_global.scss */
+/* line 27, resources/assets/styles/common/_global.scss */
 
 button:focus,
-select:focus {
+select:focus,
+input {
   outline: none;
 }
 
-/* line 30, resources/assets/styles/common/_global.scss */
+/* line 33, resources/assets/styles/common/_global.scss */
 
 .button-white-bg {
   z-index: 5;
@@ -833,7 +837,7 @@ select:focus {
   opacity: 1;
 }
 
-/* line 47, resources/assets/styles/common/_global.scss */
+/* line 50, resources/assets/styles/common/_global.scss */
 
 .button-transparent-bg {
   z-index: 5;
@@ -853,24 +857,31 @@ select:focus {
   text-decoration: none;
 }
 
-/* line 64, resources/assets/styles/common/_global.scss */
+/* line 67, resources/assets/styles/common/_global.scss */
 
 .button-transparent-bg:hover {
-  background-color: transparent;
+  background-color: #fff;
   color: #000;
 }
 
-/* line 72, resources/assets/styles/common/_global.scss */
+/* line 75, resources/assets/styles/common/_global.scss */
 
 .current_page_item a,
 .current-menu-parent a {
   color: #0e9551 !important;
 }
 
-/* line 78, resources/assets/styles/common/_global.scss */
+/* line 81, resources/assets/styles/common/_global.scss */
 
 .current-menu-item a {
   color: #000 !important;
+}
+
+/* line 86, resources/assets/styles/common/_global.scss */
+
+.modal {
+  z-index: 999999 !important;
+  margin-top: 91px;
 }
 
 /* line 1, resources/assets/styles/components/_buttons.scss */
@@ -1153,12 +1164,77 @@ select:focus {
   padding: 0 0;
 }
 
+/* line 4, resources/assets/styles/layouts/_header.scss */
+
+.banner .mobile-nav {
+  width: 75vw;
+  height: calc(100vh + 4.324rem);
+  position: fixed;
+  right: -100%;
+  top: -10px;
+  background-color: #fff;
+  padding-top: 83px;
+  -webkit-transition: .7s ease;
+  -o-transition: .7s ease;
+  transition: .7s ease;
+  font-family: Montserrat;
+}
+
+/* line 16, resources/assets/styles/layouts/_header.scss */
+
+.banner .mobile-nav .menu-primary-menu-container {
+  width: 100%;
+}
+
+/* line 19, resources/assets/styles/layouts/_header.scss */
+
+.banner .mobile-nav .menu-primary-menu-container .nav {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* line 27, resources/assets/styles/layouts/_header.scss */
+
+.banner .open span:nth-child(1) {
+  top: 10px;
+  -webkit-transform: rotate(135deg) !important;
+       -o-transform: rotate(135deg) !important;
+          transform: rotate(135deg) !important;
+  -webkit-transition: .7s ease;
+  -o-transition: .7s ease;
+  transition: .7s ease;
+  background: #fff;
+}
+
+/* line 34, resources/assets/styles/layouts/_header.scss */
+
+.banner .open span:nth-child(2) {
+  opacity: 0;
+  right: 100px;
+  background: #fff;
+}
+
+/* line 40, resources/assets/styles/layouts/_header.scss */
+
+.banner .open span:nth-child(3) {
+  top: -10px;
+  -webkit-transform: rotate(-135deg) !important;
+       -o-transform: rotate(-135deg) !important;
+          transform: rotate(-135deg) !important;
+  -webkit-transition: .7s ease;
+  -o-transition: .7s ease;
+  transition: .7s ease;
+  background: #fff;
+}
+
 /* line 1, resources/assets/styles/layouts/_footer.scss */
 
 footer {
-  height: 77px;
+  height: 4.324rem;
   position: relative;
-  bottom: -18px;
+  bottom: 0;
   z-index: 10;
 }
 
@@ -1166,6 +1242,225 @@ footer {
 
 footer p {
   margin-bottom: 0;
+}
+
+/* line 1, resources/assets/styles/layouts/_pages.scss */
+
+#customPage {
+  position: relative;
+  top: -95.19px;
+  width: 100vw;
+}
+
+/* line 8, resources/assets/styles/layouts/_pages.scss */
+
+#customPage .custom-page-container .featured-image {
+  height: 100vh;
+  width: 100vw;
+}
+
+/* line 11, resources/assets/styles/layouts/_pages.scss */
+
+#customPage .custom-page-container .featured-image img {
+  height: 100vh;
+}
+
+/* line 16, resources/assets/styles/layouts/_pages.scss */
+
+#customPage .custom-page-container .content {
+  margin-top: 60px;
+  color: #999;
+  font-family: Montserrat;
+}
+
+/* line 22, resources/assets/styles/layouts/_pages.scss */
+
+#customPage .custom-page-container .content p {
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+/* line 28, resources/assets/styles/layouts/_pages.scss */
+
+#customPage .custom-page-container .content h1,
+#customPage .custom-page-container .content h2,
+#customPage .custom-page-container .content h3,
+#customPage .custom-page-container .content h4,
+#customPage .custom-page-container .content h5,
+#customPage .custom-page-container .content h6 {
+  color: #000;
+}
+
+/* line 37, resources/assets/styles/layouts/_pages.scss */
+
+#customPage .custom-page-container .content h6 {
+  font-size: 12px;
+}
+
+/* line 41, resources/assets/styles/layouts/_pages.scss */
+
+#customPage .custom-page-container .content h5 {
+  font-size: 17px;
+}
+
+/* line 45, resources/assets/styles/layouts/_pages.scss */
+
+#customPage .custom-page-container .content h4 {
+  font-size: 20px;
+}
+
+/* line 49, resources/assets/styles/layouts/_pages.scss */
+
+#customPage .custom-page-container .content h3 {
+  font-size: 25px;
+}
+
+/* line 53, resources/assets/styles/layouts/_pages.scss */
+
+#customPage .custom-page-container .content h2 {
+  font-size: 29px;
+}
+
+/* line 57, resources/assets/styles/layouts/_pages.scss */
+
+#customPage .custom-page-container .content h1 {
+  font-size: 35px;
+}
+
+/* line 1, resources/assets/styles/layouts/_posts.scss */
+
+#blog {
+  background-color: #e0e0e0;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 992px) {
+  /* line 1, resources/assets/styles/layouts/_posts.scss */
+
+  #blog {
+    padding: 20px 0;
+  }
+}
+
+/* line 11, resources/assets/styles/layouts/_posts.scss */
+
+#blog .excerpt {
+  font-size: 14px;
+  color: #999;
+}
+
+/* line 16, resources/assets/styles/layouts/_posts.scss */
+
+#blog .card {
+  padding: 35px 10px;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+/* line 22, resources/assets/styles/layouts/_posts.scss */
+
+#blog .card .card-title {
+  margin-bottom: 20px;
+}
+
+/* line 25, resources/assets/styles/layouts/_posts.scss */
+
+#blog .card .card-title h2 {
+  text-transform: uppercase;
+  font-size: 23px;
+  font-weight: 600;
+  color: #515151;
+  line-height: 30px;
+}
+
+/* line 35, resources/assets/styles/layouts/_posts.scss */
+
+#blog .card .card-content a {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* line 40, resources/assets/styles/layouts/_posts.scss */
+
+#blog .card .card-content .featured-image {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* line 45, resources/assets/styles/layouts/_posts.scss */
+
+#blog .card .card-content .featured-image .owl-nav {
+  position: absolute;
+  top: 38%;
+  width: 100%;
+}
+
+/* line 50, resources/assets/styles/layouts/_posts.scss */
+
+#blog .card .card-content .featured-image .owl-nav .owl-next {
+  right: 5px;
+  position: absolute;
+}
+
+/* line 55, resources/assets/styles/layouts/_posts.scss */
+
+#blog .card .card-content .featured-image .owl-nav .owl-prev {
+  left: 5px;
+  position: absolute;
+}
+
+/* line 59, resources/assets/styles/layouts/_posts.scss */
+
+#blog .card .card-content .featured-image .owl-nav .owl-prev .arrow-prev {
+  -webkit-transform: rotate(180deg) !important;
+       -o-transform: rotate(180deg) !important;
+          transform: rotate(180deg) !important;
+}
+
+/* line 67, resources/assets/styles/layouts/_posts.scss */
+
+#blog .card .card-content .attributes p {
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+/* line 73, resources/assets/styles/layouts/_posts.scss */
+
+#blog .card .card-content .attributes p span {
+  font-size: 12px;
+  color: #333;
+}
+
+/* line 78, resources/assets/styles/layouts/_posts.scss */
+
+#blog .card .card-content .attributes p sub {
+  font-size: 12px;
+  color: #808080;
+  font-weight: 700;
+}
+
+/* line 87, resources/assets/styles/layouts/_posts.scss */
+
+#blog .card .card-action {
+  margin-bottom: 20px;
+}
+
+/* line 90, resources/assets/styles/layouts/_posts.scss */
+
+#blog .card .card-action .btn {
+  background-color: #e0e0e0;
+  font-size: 17px;
+  line-height: 1;
+  padding: 15px 86px;
+  border-radius: 30px;
+  border-color: #0e9551;
+  border-width: 2px;
+  color: #000;
 }
 
 /* line 1, resources/assets/styles/layouts/_tinymce.scss */
@@ -1191,22 +1486,41 @@ body#tinymce {
   margin-right: -1.5rem;
 }
 
-/* line 9, resources/assets/styles/layouts/_nav.scss */
+@media screen and (max-width: 992px) {
+  /* line 4, resources/assets/styles/layouts/_nav.scss */
+
+  .nav-primary .nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+/* line 14, resources/assets/styles/layouts/_nav.scss */
+
+.nav-primary .nav .menu-item-has-children > a::after {
+  color: #000;
+  content: " \25BE";
+}
+
+/* line 20, resources/assets/styles/layouts/_nav.scss */
 
 .nav-primary .nav li {
   padding: 1.85rem 0;
 }
 
-/* line 12, resources/assets/styles/layouts/_nav.scss */
+/* line 23, resources/assets/styles/layouts/_nav.scss */
 
 .nav-primary .nav li a {
   padding: 1.85rem 0;
   color: #000;
+  font-size: 14px;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
 
-/* line 19, resources/assets/styles/layouts/_nav.scss */
+/* line 31, resources/assets/styles/layouts/_nav.scss */
 
 .nav-primary .nav li .sub-menu {
   position: absolute;
@@ -1222,7 +1536,7 @@ body#tinymce {
   display: none;
 }
 
-/* line 28, resources/assets/styles/layouts/_nav.scss */
+/* line 40, resources/assets/styles/layouts/_nav.scss */
 
 .nav-primary .nav li .sub-menu li {
   padding: 11px 20px;
@@ -1230,13 +1544,13 @@ body#tinymce {
   text-align: left;
 }
 
-/* line 34, resources/assets/styles/layouts/_nav.scss */
+/* line 46, resources/assets/styles/layouts/_nav.scss */
 
 .nav-primary .nav li .sub-menu li:last-of-type {
   border-bottom: none;
 }
 
-/* line 38, resources/assets/styles/layouts/_nav.scss */
+/* line 50, resources/assets/styles/layouts/_nav.scss */
 
 .nav-primary .nav li .sub-menu li a {
   color: #0e9551;
@@ -1246,10 +1560,141 @@ body#tinymce {
   margin-right: 0;
 }
 
-/* line 45, resources/assets/styles/layouts/_nav.scss */
+/* line 57, resources/assets/styles/layouts/_nav.scss */
 
 .nav-primary .nav li .sub-menu li a:hover {
   color: #000;
+}
+
+/* line 67, resources/assets/styles/layouts/_nav.scss */
+
+#nav-menu {
+  width: 33px;
+  height: 33px;
+  padding: 5px;
+  cursor: pointer;
+  position: relative;
+  float: right;
+  right: 0;
+  z-index: 1;
+}
+
+/* line 77, resources/assets/styles/layouts/_nav.scss */
+
+#nav-menu span {
+  cursor: pointer;
+  height: 2px;
+  width: 33px;
+  margin-bottom: 8px;
+  background: #000;
+  position: relative;
+  right: 0;
+  display: block;
+  -webkit-transform: rotate(0deg);
+       -o-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: .7s ease;
+  -o-transition: .7s ease;
+  transition: .7s ease;
+}
+
+/* line 91, resources/assets/styles/layouts/_nav.scss */
+
+.slideInLeft {
+  -webkit-animation-duration: .5s;
+       -o-animation-duration: .5s;
+          animation-duration: .5s;
+}
+
+/* line 95, resources/assets/styles/layouts/_nav.scss */
+
+.slideOutLeft {
+  -webkit-animation-duration: .5s;
+       -o-animation-duration: .5s;
+          animation-duration: .5s;
+}
+
+/* line 99, resources/assets/styles/layouts/_nav.scss */
+
+.hide-menu {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-animation-duration: .5s;
+       -o-animation-duration: .5s;
+          animation-duration: .5s;
+  cursor: default;
+  right: -100% !important;
+}
+
+/* line 107, resources/assets/styles/layouts/_nav.scss */
+
+.show-menu {
+  opacity: 1;
+  right: 0 !important;
+  -webkit-animation-duration: .5s;
+       -o-animation-duration: .5s;
+          animation-duration: .5s;
+}
+
+/* line 113, resources/assets/styles/layouts/_nav.scss */
+
+.top-link {
+  -webkit-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 3em 3em 0;
+  border-radius: 50%;
+  padding: .25em;
+  width: 80px;
+  height: 80px;
+  background-color: #999;
+}
+
+/* line 129, resources/assets/styles/layouts/_nav.scss */
+
+.top-link.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* line 134, resources/assets/styles/layouts/_nav.scss */
+
+.top-link.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* line 139, resources/assets/styles/layouts/_nav.scss */
+
+.top-link svg {
+  fill: #000;
+  width: 24px;
+  height: 12px;
+}
+
+/* line 145, resources/assets/styles/layouts/_nav.scss */
+
+.top-link:hover {
+  background-color: #999;
+}
+
+/* line 148, resources/assets/styles/layouts/_nav.scss */
+
+.top-link:hover svg {
+  fill: #000;
 }
 
 /* line 1, resources/assets/styles/layouts/_home.scss */
@@ -1258,37 +1703,58 @@ body#tinymce {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: -4.324rem;
+  min-height: calc(100vh + 4.324rem);
 }
 
-/* line 4, resources/assets/styles/layouts/_home.scss */
+/* line 6, resources/assets/styles/layouts/_home.scss */
 
 #home-slider .home-bg {
-  margin-top: -4.324rem;
-  min-height: calc(100vh - 4.324rem);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-/* line 12, resources/assets/styles/layouts/_home.scss */
+/* line 11, resources/assets/styles/layouts/_home.scss */
+
+#home-slider .home-bg .bg-slider {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 17, resources/assets/styles/layouts/_home.scss */
+
+#home-slider .home-bg .action-group {
+  position: relative;
+  top: 180px;
+}
+
+/* line 21, resources/assets/styles/layouts/_home.scss */
+
+#home-slider .home-bg .action-group a {
+  margin-bottom: 20px;
+}
+
+/* line 27, resources/assets/styles/layouts/_home.scss */
 
 #home-slider .home-bg .owl-carousel .owl-stage-outer {
   height: 100%;
 }
 
-/* line 15, resources/assets/styles/layouts/_home.scss */
+/* line 30, resources/assets/styles/layouts/_home.scss */
 
 #home-slider .home-bg .owl-carousel .owl-stage-outer .owl-stage {
   height: 100%;
 }
 
-/* line 18, resources/assets/styles/layouts/_home.scss */
+/* line 33, resources/assets/styles/layouts/_home.scss */
 
 #home-slider .home-bg .owl-carousel .owl-stage-outer .owl-stage .owl-item {
   height: 100%;
 }
 
-/* line 21, resources/assets/styles/layouts/_home.scss */
+/* line 36, resources/assets/styles/layouts/_home.scss */
 
 #home-slider .home-bg .owl-carousel .owl-stage-outer .owl-stage .owl-item a {
   font-size: 1.125rem;
@@ -1296,7 +1762,7 @@ body#tinymce {
   line-height: 3.437rem;
 }
 
-/* line 30, resources/assets/styles/layouts/_home.scss */
+/* line 45, resources/assets/styles/layouts/_home.scss */
 
 #home-slider .home-bg .owl-carousel .owl-nav {
   position: absolute;
@@ -1304,26 +1770,42 @@ body#tinymce {
   width: 100%;
 }
 
-/* line 35, resources/assets/styles/layouts/_home.scss */
+/* line 50, resources/assets/styles/layouts/_home.scss */
 
 #home-slider .home-bg .owl-carousel .owl-nav .owl-next {
   left: calc(100% - 7.187rem);
   position: relative;
 }
 
-/* line 40, resources/assets/styles/layouts/_home.scss */
+@media screen and (max-width: 992px) {
+  /* line 50, resources/assets/styles/layouts/_home.scss */
+
+  #home-slider .home-bg .owl-carousel .owl-nav .owl-next {
+    left: calc(100% - 6.187rem);
+  }
+}
+
+/* line 59, resources/assets/styles/layouts/_home.scss */
 
 #home-slider .home-bg .owl-carousel .owl-nav .owl-prev {
   right: -2.187rem;
   position: relative;
 }
 
-/* line 44, resources/assets/styles/layouts/_home.scss */
+/* line 63, resources/assets/styles/layouts/_home.scss */
 
 #home-slider .home-bg .owl-carousel .owl-nav .owl-prev .arrow-prev {
   -webkit-transform: rotate(180deg) !important;
        -o-transform: rotate(180deg) !important;
           transform: rotate(180deg) !important;
+}
+
+@media screen and (max-width: 992px) {
+  /* line 59, resources/assets/styles/layouts/_home.scss */
+
+  #home-slider .home-bg .owl-carousel .owl-nav .owl-prev {
+    right: -1.187rem;
+  }
 }
 
 /* line 1, resources/assets/styles/layouts/_single.scss */
@@ -1396,13 +1878,22 @@ body#tinymce {
   color: #999;
 }
 
-/* line 55, resources/assets/styles/layouts/_single.scss */
+/* line 54, resources/assets/styles/layouts/_single.scss */
+
+#automobile-single .automobile-description .automobile-engine .alt-text {
+  font-size: 28px;
+  color: #000;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+/* line 62, resources/assets/styles/layouts/_single.scss */
 
 #automobile-single .automobile-description .automobile-engine .attributes p {
   color: #333;
 }
 
-/* line 58, resources/assets/styles/layouts/_single.scss */
+/* line 65, resources/assets/styles/layouts/_single.scss */
 
 #automobile-single .automobile-description .automobile-engine .attributes p strong {
   font-size: 28px;
@@ -1410,20 +1901,20 @@ body#tinymce {
   font-weight: 700;
 }
 
-/* line 64, resources/assets/styles/layouts/_single.scss */
+/* line 71, resources/assets/styles/layouts/_single.scss */
 
 #automobile-single .automobile-description .automobile-engine .attributes p sub {
   font-weight: 700;
   color: #808080;
 }
 
-/* line 74, resources/assets/styles/layouts/_single.scss */
+/* line 81, resources/assets/styles/layouts/_single.scss */
 
 .automobile-view {
-  padding: 0 5vw 40px;
+  padding: 0;
 }
 
-/* line 79, resources/assets/styles/layouts/_single.scss */
+/* line 86, resources/assets/styles/layouts/_single.scss */
 
 .automobile-view-container .owl-nav {
   position: absolute;
@@ -1431,21 +1922,21 @@ body#tinymce {
   width: 100%;
 }
 
-/* line 84, resources/assets/styles/layouts/_single.scss */
+/* line 91, resources/assets/styles/layouts/_single.scss */
 
 .automobile-view-container .owl-nav .owl-next {
   right: 5px;
   position: absolute;
 }
 
-/* line 89, resources/assets/styles/layouts/_single.scss */
+/* line 96, resources/assets/styles/layouts/_single.scss */
 
 .automobile-view-container .owl-nav .owl-prev {
   left: 5px;
   position: absolute;
 }
 
-/* line 93, resources/assets/styles/layouts/_single.scss */
+/* line 100, resources/assets/styles/layouts/_single.scss */
 
 .automobile-view-container .owl-nav .owl-prev .arrow-prev {
   -webkit-transform: rotate(180deg) !important;
@@ -1454,238 +1945,6 @@ body#tinymce {
 }
 
 /* line 1, resources/assets/styles/layouts/_categories.scss */
-
-.automobile-category {
-  background-color: #ebebeb;
-  min-height: 100vh;
-  padding: 92px 0;
-  width: 100vw;
-  font-family: Montserrat;
-}
-
-/* line 8, resources/assets/styles/layouts/_categories.scss */
-
-.automobile-category .card {
-  padding: 35px 10px;
-  border-radius: 15px;
-  background-color: #fff;
-}
-
-/* line 14, resources/assets/styles/layouts/_categories.scss */
-
-.automobile-category .card .card-title {
-  margin-bottom: 20px;
-}
-
-/* line 17, resources/assets/styles/layouts/_categories.scss */
-
-.automobile-category .card .card-title h2 {
-  text-transform: uppercase;
-  font-size: 23px;
-  font-weight: 600;
-  color: #515151;
-  line-height: 30px;
-}
-
-/* line 27, resources/assets/styles/layouts/_categories.scss */
-
-.automobile-category .card .card-content .featured-image {
-  margin-bottom: 15px;
-  position: relative;
-}
-
-/* line 32, resources/assets/styles/layouts/_categories.scss */
-
-.automobile-category .card .card-content .featured-image .owl-nav {
-  position: absolute;
-  top: 38%;
-  width: 100%;
-}
-
-/* line 37, resources/assets/styles/layouts/_categories.scss */
-
-.automobile-category .card .card-content .featured-image .owl-nav .owl-next {
-  right: 5px;
-  position: absolute;
-}
-
-/* line 42, resources/assets/styles/layouts/_categories.scss */
-
-.automobile-category .card .card-content .featured-image .owl-nav .owl-prev {
-  left: 5px;
-  position: absolute;
-}
-
-/* line 46, resources/assets/styles/layouts/_categories.scss */
-
-.automobile-category .card .card-content .featured-image .owl-nav .owl-prev .arrow-prev {
-  -webkit-transform: rotate(180deg) !important;
-       -o-transform: rotate(180deg) !important;
-          transform: rotate(180deg) !important;
-}
-
-/* line 54, resources/assets/styles/layouts/_categories.scss */
-
-.automobile-category .card .card-content .attributes p {
-  font-size: 16px;
-  color: #000;
-  font-weight: bold;
-  line-height: 1.5;
-}
-
-/* line 60, resources/assets/styles/layouts/_categories.scss */
-
-.automobile-category .card .card-content .attributes p span {
-  font-size: 12px;
-  color: #333;
-}
-
-/* line 65, resources/assets/styles/layouts/_categories.scss */
-
-.automobile-category .card .card-content .attributes p sub {
-  font-size: 12px;
-  color: #808080;
-  font-weight: 700;
-}
-
-/* line 74, resources/assets/styles/layouts/_categories.scss */
-
-.automobile-category .card .card-action {
-  margin-bottom: 20px;
-}
-
-/* line 77, resources/assets/styles/layouts/_categories.scss */
-
-.automobile-category .card .card-action .btn {
-  background-color: #e0e0e0;
-  font-size: 17px;
-  line-height: 1;
-  padding: 15px 86px;
-  border-radius: 30px;
-  border-color: #0e9551;
-  border-width: 2px;
-  color: #000;
-}
-
-/* line 91, resources/assets/styles/layouts/_categories.scss */
-
-.service-center-bg {
-  background-color: #ebebeb;
-  min-height: 100vh;
-  padding: 92px 0;
-  width: 100vw;
-  font-family: Montserrat;
-}
-
-/* line 98, resources/assets/styles/layouts/_categories.scss */
-
-.service-center-bg .card {
-  padding: 35px 10px;
-  border-radius: 15px;
-  background-color: #fff;
-}
-
-/* line 104, resources/assets/styles/layouts/_categories.scss */
-
-.service-center-bg .card .card-title {
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-/* line 108, resources/assets/styles/layouts/_categories.scss */
-
-.service-center-bg .card .card-title a {
-  text-transform: uppercase;
-  color: #515151;
-}
-
-/* line 112, resources/assets/styles/layouts/_categories.scss */
-
-.service-center-bg .card .card-title a h2 {
-  font-size: 23px;
-  font-weight: 600;
-  line-height: 30px;
-}
-
-/* line 118, resources/assets/styles/layouts/_categories.scss */
-
-.service-center-bg .card .card-title a:hover {
-  color: #0e9551;
-}
-
-/* line 126, resources/assets/styles/layouts/_categories.scss */
-
-.service-center-category {
-  background-color: #ebebeb;
-  min-height: 100vh;
-  padding: 92px 0;
-  width: 100vw;
-  font-family: Montserrat;
-}
-
-/* line 133, resources/assets/styles/layouts/_categories.scss */
-
-.service-center-category .service-center-category-bg {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-/* line 136, resources/assets/styles/layouts/_categories.scss */
-
-.service-center-category .service-center-category-bg #accordion-bg {
-  width: 100%;
-}
-
-/* line 139, resources/assets/styles/layouts/_categories.scss */
-
-.service-center-category .service-center-category-bg #accordion-bg .accordion-item {
-  margin-bottom: 30px;
-}
-
-/* line 142, resources/assets/styles/layouts/_categories.scss */
-
-.service-center-category .service-center-category-bg #accordion-bg .accordion-item .accordion-heading {
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 1px;
-  color: #000;
-  border-radius: 40px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #000;
-  background-color: #fff;
-  width: 100%;
-  padding: 11px 0;
-}
-
-/* line 155, resources/assets/styles/layouts/_categories.scss */
-
-.service-center-category .service-center-category-bg #accordion-bg .accordion-item .accordion-heading p {
-  padding: 0 30px;
-  display: block;
-  position: relative;
-  margin-bottom: 0;
-}
-
-/* line 163, resources/assets/styles/layouts/_categories.scss */
-
-.service-center-category .service-center-category-bg #accordion-bg .accordion-item .accordion-content {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: #999;
-  padding: 0 30px;
-  line-height: 25px;
-  font-size: 14px;
-}
-
-/* line 176, resources/assets/styles/layouts/_categories.scss */
 
 .buyform-container {
   display: -webkit-box;
@@ -1706,13 +1965,13 @@ body#tinymce {
   padding: 5px 10px;
 }
 
-/* line 181, resources/assets/styles/layouts/_categories.scss */
+/* line 6, resources/assets/styles/layouts/_categories.scss */
 
 .buyform-container .title {
   text-align: center;
 }
 
-/* line 184, resources/assets/styles/layouts/_categories.scss */
+/* line 9, resources/assets/styles/layouts/_categories.scss */
 
 .buyform-container .title h3 {
   font-weight: bold;
@@ -1722,13 +1981,33 @@ body#tinymce {
   line-height: normal;
 }
 
-/* line 193, resources/assets/styles/layouts/_categories.scss */
+/* line 18, resources/assets/styles/layouts/_categories.scss */
 
 .buyform-container .content {
-  text-align: center;
+  color: #999;
 }
 
-/* line 197, resources/assets/styles/layouts/_categories.scss */
+/* line 21, resources/assets/styles/layouts/_categories.scss */
+
+.buyform-container .content h1,
+.buyform-container .content h2,
+.buyform-container .content h3,
+.buyform-container .content h4,
+.buyform-container .content h5,
+.buyform-container .content h6 {
+  font-weight: bold;
+  font-size: 17px;
+  color: #999;
+  line-height: normal;
+}
+
+/* line 33, resources/assets/styles/layouts/_categories.scss */
+
+.buyform-container .content p {
+  color: #999;
+}
+
+/* line 38, resources/assets/styles/layouts/_categories.scss */
 
 .buyform-container .content form label {
   font-size: 13px;
@@ -1736,7 +2015,7 @@ body#tinymce {
   margin-bottom: .5rem;
 }
 
-/* line 203, resources/assets/styles/layouts/_categories.scss */
+/* line 44, resources/assets/styles/layouts/_categories.scss */
 
 .buyform-container .content form input {
   font-size: 16px;
@@ -1750,7 +2029,7 @@ body#tinymce {
   height: 50px;
 }
 
-/* line 215, resources/assets/styles/layouts/_categories.scss */
+/* line 56, resources/assets/styles/layouts/_categories.scss */
 
 .buyform-container .content form input[type=submit] {
   color: #fff;
@@ -1763,6 +2042,246 @@ body#tinymce {
   width: 100%;
   text-transform: uppercase;
   letter-spacing: 5px;
+}
+
+/* line 72, resources/assets/styles/layouts/_categories.scss */
+
+.automobile-category {
+  background-color: #ebebeb;
+  min-height: 100vh;
+  padding: 92px 0;
+  width: 100vw;
+  font-family: Montserrat;
+}
+
+@media screen and (max-width: 992px) {
+  /* line 72, resources/assets/styles/layouts/_categories.scss */
+
+  .automobile-category {
+    padding: 40px 0;
+  }
+}
+
+/* line 83, resources/assets/styles/layouts/_categories.scss */
+
+.automobile-category .card {
+  padding: 35px 10px;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+/* line 89, resources/assets/styles/layouts/_categories.scss */
+
+.automobile-category .card .card-title {
+  margin-bottom: 20px;
+}
+
+/* line 92, resources/assets/styles/layouts/_categories.scss */
+
+.automobile-category .card .card-title h2 {
+  text-transform: uppercase;
+  font-size: 23px;
+  font-weight: 600;
+  color: #515151;
+  line-height: 30px;
+}
+
+/* line 102, resources/assets/styles/layouts/_categories.scss */
+
+.automobile-category .card .card-content .featured-image {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* line 107, resources/assets/styles/layouts/_categories.scss */
+
+.automobile-category .card .card-content .featured-image .owl-nav {
+  position: absolute;
+  top: 38%;
+  width: 100%;
+}
+
+/* line 112, resources/assets/styles/layouts/_categories.scss */
+
+.automobile-category .card .card-content .featured-image .owl-nav .owl-next {
+  right: 5px;
+  position: absolute;
+}
+
+/* line 117, resources/assets/styles/layouts/_categories.scss */
+
+.automobile-category .card .card-content .featured-image .owl-nav .owl-prev {
+  left: 5px;
+  position: absolute;
+}
+
+/* line 121, resources/assets/styles/layouts/_categories.scss */
+
+.automobile-category .card .card-content .featured-image .owl-nav .owl-prev .arrow-prev {
+  -webkit-transform: rotate(180deg) !important;
+       -o-transform: rotate(180deg) !important;
+          transform: rotate(180deg) !important;
+}
+
+/* line 129, resources/assets/styles/layouts/_categories.scss */
+
+.automobile-category .card .card-content .attributes p {
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+/* line 135, resources/assets/styles/layouts/_categories.scss */
+
+.automobile-category .card .card-content .attributes p span {
+  font-size: 12px;
+  color: #333;
+}
+
+/* line 140, resources/assets/styles/layouts/_categories.scss */
+
+.automobile-category .card .card-content .attributes p sub {
+  font-size: 12px;
+  color: #808080;
+  font-weight: 700;
+}
+
+/* line 149, resources/assets/styles/layouts/_categories.scss */
+
+.automobile-category .card .card-action {
+  margin-bottom: 20px;
+}
+
+/* line 152, resources/assets/styles/layouts/_categories.scss */
+
+.automobile-category .card .card-action .btn {
+  background-color: #e0e0e0;
+  font-size: 17px;
+  line-height: 1;
+  padding: 15px 86px;
+  border-radius: 30px;
+  border-color: #0e9551;
+  border-width: 2px;
+  color: #000;
+}
+
+/* line 166, resources/assets/styles/layouts/_categories.scss */
+
+.service-center-bg {
+  background-color: #ebebeb;
+  min-height: 100vh;
+  padding: 92px 0;
+  width: 100vw;
+  font-family: Montserrat;
+}
+
+/* line 173, resources/assets/styles/layouts/_categories.scss */
+
+.service-center-bg .card {
+  padding: 35px 10px;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+/* line 179, resources/assets/styles/layouts/_categories.scss */
+
+.service-center-bg .card .card-title {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* line 183, resources/assets/styles/layouts/_categories.scss */
+
+.service-center-bg .card .card-title a {
+  text-transform: uppercase;
+  color: #515151;
+}
+
+/* line 187, resources/assets/styles/layouts/_categories.scss */
+
+.service-center-bg .card .card-title a h2 {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+/* line 193, resources/assets/styles/layouts/_categories.scss */
+
+.service-center-bg .card .card-title a:hover {
+  color: #0e9551;
+}
+
+/* line 201, resources/assets/styles/layouts/_categories.scss */
+
+.service-center-category {
+  background-color: #ebebeb;
+  min-height: 100vh;
+  padding: 92px 0;
+  width: 100vw;
+  font-family: Montserrat;
+}
+
+/* line 208, resources/assets/styles/layouts/_categories.scss */
+
+.service-center-category .service-center-category-bg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 211, resources/assets/styles/layouts/_categories.scss */
+
+.service-center-category .service-center-category-bg #accordion-bg {
+  width: 100%;
+}
+
+/* line 214, resources/assets/styles/layouts/_categories.scss */
+
+.service-center-category .service-center-category-bg #accordion-bg .accordion-item {
+  margin-bottom: 30px;
+}
+
+/* line 217, resources/assets/styles/layouts/_categories.scss */
+
+.service-center-category .service-center-category-bg #accordion-bg .accordion-item .accordion-heading {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1px;
+  color: #000;
+  border-radius: 40px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #000;
+  background-color: #fff;
+  width: 100%;
+  padding: 11px 0;
+}
+
+/* line 230, resources/assets/styles/layouts/_categories.scss */
+
+.service-center-category .service-center-category-bg #accordion-bg .accordion-item .accordion-heading p {
+  padding: 0 30px;
+  display: block;
+  position: relative;
+  margin-bottom: 0;
+}
+
+/* line 238, resources/assets/styles/layouts/_categories.scss */
+
+.service-center-category .service-center-category-bg #accordion-bg .accordion-item .accordion-content {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #999;
+  padding: 0 30px;
+  line-height: 25px;
+  font-size: 14px;
 }
 
 /* line 1, resources/assets/styles/layouts/_filter.scss */
@@ -1790,7 +2309,7 @@ body#tinymce {
 /* line 12, resources/assets/styles/layouts/_filter.scss */
 
 .automobile-filter .search-cars {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 /* line 15, resources/assets/styles/layouts/_filter.scss */
@@ -1804,6 +2323,351 @@ body#tinymce {
   background-position: right;
   background-repeat: no-repeat;
   padding-right: 18px;
+}
+
+/* line 1, resources/assets/styles/layouts/_search.scss */
+
+.single-search-page {
+  background-color: #e0e0e0;
+  padding-top: 35px;
+}
+
+@media screen and (max-width: 992px) {
+  /* line 1, resources/assets/styles/layouts/_search.scss */
+
+  .single-search-page {
+    padding: 20px 0;
+  }
+}
+
+/* line 9, resources/assets/styles/layouts/_search.scss */
+
+.single-search-page .card {
+  padding: 35px 10px;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+/* line 15, resources/assets/styles/layouts/_search.scss */
+
+.single-search-page .card .card-title {
+  margin-bottom: 20px;
+}
+
+/* line 18, resources/assets/styles/layouts/_search.scss */
+
+.single-search-page .card .card-title h2 {
+  text-transform: uppercase;
+  font-size: 23px;
+  font-weight: 600;
+  color: #515151;
+  line-height: 30px;
+}
+
+/* line 28, resources/assets/styles/layouts/_search.scss */
+
+.single-search-page .card .card-content a {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* line 33, resources/assets/styles/layouts/_search.scss */
+
+.single-search-page .card .card-content .featured-image {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* line 38, resources/assets/styles/layouts/_search.scss */
+
+.single-search-page .card .card-content .featured-image .owl-nav {
+  position: absolute;
+  top: 38%;
+  width: 100%;
+}
+
+/* line 43, resources/assets/styles/layouts/_search.scss */
+
+.single-search-page .card .card-content .featured-image .owl-nav .owl-next {
+  right: 5px;
+  position: absolute;
+}
+
+/* line 48, resources/assets/styles/layouts/_search.scss */
+
+.single-search-page .card .card-content .featured-image .owl-nav .owl-prev {
+  left: 5px;
+  position: absolute;
+}
+
+/* line 52, resources/assets/styles/layouts/_search.scss */
+
+.single-search-page .card .card-content .featured-image .owl-nav .owl-prev .arrow-prev {
+  -webkit-transform: rotate(180deg) !important;
+       -o-transform: rotate(180deg) !important;
+          transform: rotate(180deg) !important;
+}
+
+/* line 60, resources/assets/styles/layouts/_search.scss */
+
+.single-search-page .card .card-content .attributes p {
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+/* line 66, resources/assets/styles/layouts/_search.scss */
+
+.single-search-page .card .card-content .attributes p span {
+  font-size: 12px;
+  color: #333;
+}
+
+/* line 71, resources/assets/styles/layouts/_search.scss */
+
+.single-search-page .card .card-content .attributes p sub {
+  font-size: 12px;
+  color: #808080;
+  font-weight: 700;
+}
+
+/* line 80, resources/assets/styles/layouts/_search.scss */
+
+.single-search-page .card .card-action {
+  margin-bottom: 20px;
+}
+
+/* line 83, resources/assets/styles/layouts/_search.scss */
+
+.single-search-page .card .card-action .btn {
+  background-color: #e0e0e0;
+  font-size: 17px;
+  line-height: 1;
+  padding: 15px 86px;
+  border-radius: 30px;
+  border-color: #0e9551;
+  border-width: 2px;
+  color: #000;
+}
+
+/* line 97, resources/assets/styles/layouts/_search.scss */
+
+#search-page {
+  width: 100vw;
+  padding-top: 25px;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  font-family: Montserrat;
+}
+
+@media screen and (max-width: 992px) {
+  /* line 97, resources/assets/styles/layouts/_search.scss */
+
+  #search-page {
+    padding: 10px 0;
+  }
+}
+
+/* line 112, resources/assets/styles/layouts/_search.scss */
+
+#search-page .featured-image h3 {
+  font-size: 55px;
+}
+
+/* line 117, resources/assets/styles/layouts/_search.scss */
+
+#search-page .content {
+  margin: 30px 0;
+}
+
+/* line 120, resources/assets/styles/layouts/_search.scss */
+
+#search-page .content p {
+  font-size: 18px;
+}
+
+/* line 126, resources/assets/styles/layouts/_search.scss */
+
+.search-form {
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* line 130, resources/assets/styles/layouts/_search.scss */
+
+.search-form label {
+  width: 100%;
+}
+
+/* line 133, resources/assets/styles/layouts/_search.scss */
+
+.search-form label input {
+  border: none;
+  border-bottom: 2px solid #000;
+  padding: 15px 20px 15px 0 !important;
+  font-size: 18px !important;
+}
+
+/* line 141, resources/assets/styles/layouts/_search.scss */
+
+.search-form .search-submit {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+}
+
+/* line 146, resources/assets/styles/layouts/_search.scss */
+
+.search-form .search-submit:hover {
+  border: 2px solid #000;
+  color: #000;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* line 155, resources/assets/styles/layouts/_search.scss */
+
+#searchform {
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  border: none;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  left: 0;
+}
+
+/* line 166, resources/assets/styles/layouts/_search.scss */
+
+#searchform .close-modal {
+  top: 158px;
+  right: 10vw;
+}
+
+/* line 171, resources/assets/styles/layouts/_search.scss */
+
+#searchform .search-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* line 178, resources/assets/styles/layouts/_search.scss */
+
+#searchform .search-container .title {
+  margin-bottom: 15px;
+}
+
+/* line 181, resources/assets/styles/layouts/_search.scss */
+
+#searchform .search-container .title h3 {
+  font-size: 35px;
+}
+
+/* line 186, resources/assets/styles/layouts/_search.scss */
+
+#searchform .search-container .content {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 192, resources/assets/styles/layouts/_search.scss */
+
+#searchform .search-container .content .search-form {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 992px) {
+  /* line 192, resources/assets/styles/layouts/_search.scss */
+
+  #searchform .search-container .content .search-form {
+    width: 100%;
+  }
+}
+
+/* line 201, resources/assets/styles/layouts/_search.scss */
+
+#searchform .search-container .content .search-form input {
+  border-bottom: 2px solid #000;
+  padding: 15px 20px 15px 0;
+  font-size: 18px;
+}
+
+/* line 206, resources/assets/styles/layouts/_search.scss */
+
+#searchform .search-container .content .search-form input::-webkit-input-placeholder {
+  font-size: 16px;
+}
+
+#searchform .search-container .content .search-form input::-moz-placeholder {
+  font-size: 16px;
+}
+
+#searchform .search-container .content .search-form input::-ms-input-placeholder {
+  font-size: 16px;
+}
+
+#searchform .search-container .content .search-form input::placeholder {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 992px) {
+  /* line 206, resources/assets/styles/layouts/_search.scss */
+
+  #searchform .search-container .content .search-form input::-webkit-input-placeholder {
+    font-size: 10px;
+  }
+
+  #searchform .search-container .content .search-form input::-moz-placeholder {
+    font-size: 10px;
+  }
+
+  #searchform .search-container .content .search-form input::-ms-input-placeholder {
+    font-size: 10px;
+  }
+
+  #searchform .search-container .content .search-form input::placeholder {
+    font-size: 10px;
+  }
 }
 
 /**
@@ -1844,6 +2708,10 @@ body#tinymce {
 
 .bg-transparent {
   background-color: transparent;
+}
+
+.bg-background {
+  background-color: #e0e0e0;
 }
 
 .bg-black {
@@ -2142,6 +3010,10 @@ body#tinymce {
   background-color: transparent;
 }
 
+.hover\:bg-background:hover {
+  background-color: #e0e0e0;
+}
+
 .hover\:bg-black:hover {
   background-color: #22292f;
 }
@@ -2436,6 +3308,10 @@ body#tinymce {
 
 .focus\:bg-transparent:focus {
   background-color: transparent;
+}
+
+.focus\:bg-background:focus {
+  background-color: #e0e0e0;
 }
 
 .focus\:bg-black:focus {
@@ -2806,6 +3682,10 @@ body#tinymce {
   border-color: transparent;
 }
 
+.border-background {
+  border-color: #e0e0e0;
+}
+
 .border-black {
   border-color: #22292f;
 }
@@ -3102,6 +3982,10 @@ body#tinymce {
   border-color: transparent;
 }
 
+.hover\:border-background:hover {
+  border-color: #e0e0e0;
+}
+
 .hover\:border-black:hover {
   border-color: #22292f;
 }
@@ -3396,6 +4280,10 @@ body#tinymce {
 
 .focus\:border-transparent:focus {
   border-color: transparent;
+}
+
+.focus\:border-background:focus {
+  border-color: #e0e0e0;
 }
 
 .focus\:border-black:focus {
@@ -6244,6 +7132,10 @@ body#tinymce {
   color: transparent;
 }
 
+.text-background {
+  color: #e0e0e0;
+}
+
 .text-black {
   color: #22292f;
 }
@@ -6540,6 +7432,10 @@ body#tinymce {
   color: transparent;
 }
 
+.hover\:text-background:hover {
+  color: #e0e0e0;
+}
+
 .hover\:text-black:hover {
   color: #22292f;
 }
@@ -6834,6 +7730,10 @@ body#tinymce {
 
 .focus\:text-transparent:focus {
   color: transparent;
+}
+
+.focus\:text-background:focus {
+  color: #e0e0e0;
 }
 
 .focus\:text-black:focus {
@@ -7581,6 +8481,10 @@ body#tinymce {
     background-color: transparent;
   }
 
+  .sm\:bg-background {
+    background-color: #e0e0e0;
+  }
+
   .sm\:bg-black {
     background-color: #22292f;
   }
@@ -7877,6 +8781,10 @@ body#tinymce {
     background-color: transparent;
   }
 
+  .sm\:hover\:bg-background:hover {
+    background-color: #e0e0e0;
+  }
+
   .sm\:hover\:bg-black:hover {
     background-color: #22292f;
   }
@@ -8171,6 +9079,10 @@ body#tinymce {
 
   .sm\:focus\:bg-transparent:focus {
     background-color: transparent;
+  }
+
+  .sm\:focus\:bg-background:focus {
+    background-color: #e0e0e0;
   }
 
   .sm\:focus\:bg-black:focus {
@@ -8533,6 +9445,10 @@ body#tinymce {
     border-color: transparent;
   }
 
+  .sm\:border-background {
+    border-color: #e0e0e0;
+  }
+
   .sm\:border-black {
     border-color: #22292f;
   }
@@ -8829,6 +9745,10 @@ body#tinymce {
     border-color: transparent;
   }
 
+  .sm\:hover\:border-background:hover {
+    border-color: #e0e0e0;
+  }
+
   .sm\:hover\:border-black:hover {
     border-color: #22292f;
   }
@@ -9123,6 +10043,10 @@ body#tinymce {
 
   .sm\:focus\:border-transparent:focus {
     border-color: transparent;
+  }
+
+  .sm\:focus\:border-background:focus {
+    border-color: #e0e0e0;
   }
 
   .sm\:focus\:border-black:focus {
@@ -11955,6 +12879,10 @@ body#tinymce {
     color: transparent;
   }
 
+  .sm\:text-background {
+    color: #e0e0e0;
+  }
+
   .sm\:text-black {
     color: #22292f;
   }
@@ -12251,6 +13179,10 @@ body#tinymce {
     color: transparent;
   }
 
+  .sm\:hover\:text-background:hover {
+    color: #e0e0e0;
+  }
+
   .sm\:hover\:text-black:hover {
     color: #22292f;
   }
@@ -12545,6 +13477,10 @@ body#tinymce {
 
   .sm\:focus\:text-transparent:focus {
     color: transparent;
+  }
+
+  .sm\:focus\:text-background:focus {
+    color: #e0e0e0;
   }
 
   .sm\:focus\:text-black:focus {
@@ -13278,6 +14214,10 @@ body#tinymce {
     background-color: transparent;
   }
 
+  .md\:bg-background {
+    background-color: #e0e0e0;
+  }
+
   .md\:bg-black {
     background-color: #22292f;
   }
@@ -13574,6 +14514,10 @@ body#tinymce {
     background-color: transparent;
   }
 
+  .md\:hover\:bg-background:hover {
+    background-color: #e0e0e0;
+  }
+
   .md\:hover\:bg-black:hover {
     background-color: #22292f;
   }
@@ -13868,6 +14812,10 @@ body#tinymce {
 
   .md\:focus\:bg-transparent:focus {
     background-color: transparent;
+  }
+
+  .md\:focus\:bg-background:focus {
+    background-color: #e0e0e0;
   }
 
   .md\:focus\:bg-black:focus {
@@ -14230,6 +15178,10 @@ body#tinymce {
     border-color: transparent;
   }
 
+  .md\:border-background {
+    border-color: #e0e0e0;
+  }
+
   .md\:border-black {
     border-color: #22292f;
   }
@@ -14526,6 +15478,10 @@ body#tinymce {
     border-color: transparent;
   }
 
+  .md\:hover\:border-background:hover {
+    border-color: #e0e0e0;
+  }
+
   .md\:hover\:border-black:hover {
     border-color: #22292f;
   }
@@ -14820,6 +15776,10 @@ body#tinymce {
 
   .md\:focus\:border-transparent:focus {
     border-color: transparent;
+  }
+
+  .md\:focus\:border-background:focus {
+    border-color: #e0e0e0;
   }
 
   .md\:focus\:border-black:focus {
@@ -17652,6 +18612,10 @@ body#tinymce {
     color: transparent;
   }
 
+  .md\:text-background {
+    color: #e0e0e0;
+  }
+
   .md\:text-black {
     color: #22292f;
   }
@@ -17948,6 +18912,10 @@ body#tinymce {
     color: transparent;
   }
 
+  .md\:hover\:text-background:hover {
+    color: #e0e0e0;
+  }
+
   .md\:hover\:text-black:hover {
     color: #22292f;
   }
@@ -18242,6 +19210,10 @@ body#tinymce {
 
   .md\:focus\:text-transparent:focus {
     color: transparent;
+  }
+
+  .md\:focus\:text-background:focus {
+    color: #e0e0e0;
   }
 
   .md\:focus\:text-black:focus {
@@ -18975,6 +19947,10 @@ body#tinymce {
     background-color: transparent;
   }
 
+  .lg\:bg-background {
+    background-color: #e0e0e0;
+  }
+
   .lg\:bg-black {
     background-color: #22292f;
   }
@@ -19271,6 +20247,10 @@ body#tinymce {
     background-color: transparent;
   }
 
+  .lg\:hover\:bg-background:hover {
+    background-color: #e0e0e0;
+  }
+
   .lg\:hover\:bg-black:hover {
     background-color: #22292f;
   }
@@ -19565,6 +20545,10 @@ body#tinymce {
 
   .lg\:focus\:bg-transparent:focus {
     background-color: transparent;
+  }
+
+  .lg\:focus\:bg-background:focus {
+    background-color: #e0e0e0;
   }
 
   .lg\:focus\:bg-black:focus {
@@ -19927,6 +20911,10 @@ body#tinymce {
     border-color: transparent;
   }
 
+  .lg\:border-background {
+    border-color: #e0e0e0;
+  }
+
   .lg\:border-black {
     border-color: #22292f;
   }
@@ -20223,6 +21211,10 @@ body#tinymce {
     border-color: transparent;
   }
 
+  .lg\:hover\:border-background:hover {
+    border-color: #e0e0e0;
+  }
+
   .lg\:hover\:border-black:hover {
     border-color: #22292f;
   }
@@ -20517,6 +21509,10 @@ body#tinymce {
 
   .lg\:focus\:border-transparent:focus {
     border-color: transparent;
+  }
+
+  .lg\:focus\:border-background:focus {
+    border-color: #e0e0e0;
   }
 
   .lg\:focus\:border-black:focus {
@@ -23349,6 +24345,10 @@ body#tinymce {
     color: transparent;
   }
 
+  .lg\:text-background {
+    color: #e0e0e0;
+  }
+
   .lg\:text-black {
     color: #22292f;
   }
@@ -23645,6 +24645,10 @@ body#tinymce {
     color: transparent;
   }
 
+  .lg\:hover\:text-background:hover {
+    color: #e0e0e0;
+  }
+
   .lg\:hover\:text-black:hover {
     color: #22292f;
   }
@@ -23939,6 +24943,10 @@ body#tinymce {
 
   .lg\:focus\:text-transparent:focus {
     color: transparent;
+  }
+
+  .lg\:focus\:text-background:focus {
+    color: #e0e0e0;
   }
 
   .lg\:focus\:text-black:focus {
@@ -24672,6 +25680,10 @@ body#tinymce {
     background-color: transparent;
   }
 
+  .xl\:bg-background {
+    background-color: #e0e0e0;
+  }
+
   .xl\:bg-black {
     background-color: #22292f;
   }
@@ -24968,6 +25980,10 @@ body#tinymce {
     background-color: transparent;
   }
 
+  .xl\:hover\:bg-background:hover {
+    background-color: #e0e0e0;
+  }
+
   .xl\:hover\:bg-black:hover {
     background-color: #22292f;
   }
@@ -25262,6 +26278,10 @@ body#tinymce {
 
   .xl\:focus\:bg-transparent:focus {
     background-color: transparent;
+  }
+
+  .xl\:focus\:bg-background:focus {
+    background-color: #e0e0e0;
   }
 
   .xl\:focus\:bg-black:focus {
@@ -25624,6 +26644,10 @@ body#tinymce {
     border-color: transparent;
   }
 
+  .xl\:border-background {
+    border-color: #e0e0e0;
+  }
+
   .xl\:border-black {
     border-color: #22292f;
   }
@@ -25920,6 +26944,10 @@ body#tinymce {
     border-color: transparent;
   }
 
+  .xl\:hover\:border-background:hover {
+    border-color: #e0e0e0;
+  }
+
   .xl\:hover\:border-black:hover {
     border-color: #22292f;
   }
@@ -26214,6 +27242,10 @@ body#tinymce {
 
   .xl\:focus\:border-transparent:focus {
     border-color: transparent;
+  }
+
+  .xl\:focus\:border-background:focus {
+    border-color: #e0e0e0;
   }
 
   .xl\:focus\:border-black:focus {
@@ -29046,6 +30078,10 @@ body#tinymce {
     color: transparent;
   }
 
+  .xl\:text-background {
+    color: #e0e0e0;
+  }
+
   .xl\:text-black {
     color: #22292f;
   }
@@ -29342,6 +30378,10 @@ body#tinymce {
     color: transparent;
   }
 
+  .xl\:hover\:text-background:hover {
+    color: #e0e0e0;
+  }
+
   .xl\:hover\:text-black:hover {
     color: #22292f;
   }
@@ -29636,6 +30676,10 @@ body#tinymce {
 
   .xl\:focus\:text-transparent:focus {
     color: transparent;
+  }
+
+  .xl\:focus\:text-background:focus {
+    color: #e0e0e0;
   }
 
   .xl\:focus\:text-black:focus {

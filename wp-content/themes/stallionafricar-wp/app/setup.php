@@ -45,6 +45,7 @@ add_action('after_setup_theme', function () {
      */
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'sage'),
+        'mobile_navigation' => __('Mobile Navigation', 'sage'),
         'autombile_navigation' => __('Automobile Navigation', 'sage')
     ]);
 

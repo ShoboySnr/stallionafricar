@@ -1,0 +1,102 @@
+#blog {
+  background-color: $grey-3;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  min-height: 100vh;
+
+  @media screen and (max-width: 992px) {
+    padding: 20px 0;
+  }
+
+  .excerpt {
+    font-size: 14px;
+    color: $grey-2;
+  }
+
+  .card {
+    padding: 35px 10px;
+    border-radius: 15px;
+
+    @apply bg-white;
+
+    .card-title {
+      margin-bottom: 20px;
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 23px;
+        font-weight: 600;
+        color: $grey-7;
+        line-height: 30px;
+      }
+    }
+
+    .card-content {
+      a {
+        color: $black;
+        text-decoration: underline;
+      }
+
+      .featured-image {
+        margin-bottom: 15px;
+
+        @apply relative;
+
+        .owl-nav {
+          position: absolute;
+          top: 38%;
+          width: 100%;
+
+          .owl-next {
+            right: 5px;
+            position: absolute;
+          }
+
+          .owl-prev {
+            left: 5px;
+            position: absolute;
+
+            .arrow-prev {
+              transform: rotate(180deg) !important;
+            }
+          }
+        }
+      }
+
+      .attributes {
+        p {
+          font-size: 16px;
+          color: $black;
+          font-weight: bold;
+          line-height: 1.5;
+
+          span {
+            font-size: 12px;
+            color: $grey-4;
+          }
+
+          sub {
+            font-size: 12px;
+            color: $grey-5;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    .card-action {
+      margin-bottom: 20px;
+
+      .btn {
+        background-color: rgb(224, 224, 224);
+        font-size: 17px;
+        line-height: 1;
+        padding: 15px 86px;
+        border-radius: 30px;
+        border-color: $green;
+        border-width: 2px;
+        color: $black;
+      }
+    }
+  }
+}

@@ -23,6 +23,60 @@ export default {
         fadeDuration: 250,
       });
     });
+
+    //toggle video and image 
+    // $('#toggle-image-video .image').click(function(event) {
+    //   event.preventDefault();
+    //   $(this).hide();
+    //   $(this).parent().find('.video').show();
+    // });
+
+    //toggle mobile nav menu 
+    // $('.menu-item-has-children a').click(function(event) {
+    //   event.preventDefault();
+    //   alert('hello');
+    //   $(this).siblings('.sub-menu').slideToggle();
+    // })
+
+    //toggle menu header 
+    $(function() {
+      $('#nav-menu').click(function() {
+        if ($('.mobile-nav').hasClass('hide-menu')) {
+          $('.mobile-nav').removeClass('show-menu').removeClass('hide-menu');
+          $('.mobile-nav').removeClass('animated slideInLeft').addClass('slideOutLeft');
+        } else {
+          $('.mobile-nav').addClass('show-menu').addClass('hide-menu');
+          $('.mobile-nav').addClass('animated slideOutLeft').addClass('slideInLeft');
+        }
+        $(this).toggleClass('open');
+      });
+    
+      // $('#nav-menu').click(function() {
+      //   if ($('.mobile-nav').hasClass('show-menu')) {
+      //     $('.mobile-nav').removeClass('show-menu animated slideInLeft');
+      //     $(this).toggleClass('open');
+      //   }
+      //   $(this).addClass('slideOutLeft hide-menu');
+      // });
+    
+      $(document).keyup(function(e) {
+        if (e.keyCode == 27) {
+          if ($('.mobile-nav').hasClass('show-menu')) {
+            $('#nav-menu').toggleClass('open');
+          }
+          $('.mobile-nav').addClass('slideOutLeft hide-menu');
+        }
+      });
+    });
+
+    //smoth scroll
+    $(document).on('click', 'a[href^="#"]', function (event) {
+      event.preventDefault();
+        $('html,body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top,
+        }, 500);
+    });
+    
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired

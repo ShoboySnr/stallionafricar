@@ -1,0 +1,62 @@
+#customPage {
+  position: relative;
+  top: -95.19px;
+
+  @apply w-screen;
+
+  .custom-page-container {
+    .featured-image {
+      @apply h-screen w-screen;
+
+      img {
+        @apply h-screen;
+      }
+    }
+
+    .content {
+      margin-top: 60px;
+      color: $grey-2;
+
+      @apply font-Montserrat;
+
+      p {
+        margin-bottom: 15px;
+        font-size: 14px;
+        line-height: 25px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $black;
+      }
+
+      h6 {
+        font-size: 12px;
+      }
+
+      h5 {
+        font-size: 17px;
+      }
+
+      h4 {
+        font-size: 20px;
+      }
+
+      h3 {
+        font-size: 25px;
+      }
+
+      h2 {
+        font-size: 29px;
+      }
+
+      h1 {
+        font-size: 35px;
+      }
+    }
+  }
+}

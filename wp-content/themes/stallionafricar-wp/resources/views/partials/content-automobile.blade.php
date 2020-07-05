@@ -5,8 +5,8 @@ $automobiles = App::getCustomCategory($thisCat->term_id, 'automobile', $thisCat-
 
 ?>
 <div class="automobile-category">
-  <div class="container">
-    <div class="flex justify-start w-full flex-wrap -mx-4">
+  <div class="container mt-6 xl:mt-20">
+    <div class="flex justify-start w-full flex-wrap mx-0 lg:-mx-4">
       <?php 
         $count = 0;
         foreach($automobiles as $automobile) {
@@ -16,9 +16,10 @@ $automobiles = App::getCustomCategory($thisCat->term_id, 'automobile', $thisCat-
           $transmission_unit = get_field('transmission_unit', $automobile->ID);
           $power_rpm = get_field('power_rpm', $automobile->ID);
           $power_horse = get_field('power_horse', $automobile->ID);
+          $altText =  get_field('alternative_text', $automobile->ID);
           $count++;
       ?>
-      <div class="w-full lg:w-1/2 mb-10 px-4">
+      <div class="w-full lg:w-1/2 mb-10 px-0 lg:px-4">
         <div class="card text-center">
           <div class="card-title">
             <a href="<?= get_permalink($automobile->ID); ?>">
@@ -44,6 +45,16 @@ $automobiles = App::getCustomCategory($thisCat->term_id, 'automobile', $thisCat-
               </div>
             </div>
             <div class="attributes">
+            <?php
+                  if($altText != '') {
+              ?>
+              <div class="text-center">
+                  <h3 class="alt-text"><?= $altText; ?></h3>
+              </div>
+              <?php
+              }
+              else {
+              ?>
               <div class="flex justify-center w-full">
                 <p class="mx-4"><strong><?= $engine; ?></strong><sub><?= $engine_unit; ?></sub><br />
                   <span>Engine</span>
@@ -55,10 +66,11 @@ $automobiles = App::getCustomCategory($thisCat->term_id, 'automobile', $thisCat-
                   <span>Power</span>
                 </p>
               </div>
+              <?php } ?>
             </div>
           </div>
           <div class="card-action">
-            <div class="flex justify-between w-full">
+            <div class="flex justify-center lg:justify-between w-full flex-wrap">
               <a href="#buyform<?= $count; ?>" rel="modal:open" class="btn fadeTransistion" title="Buy Now">Buy Now</a>
               <a href="<?= get_permalink($automobile->ID); ?>" class="btn" title="Overview">Overview</a>
             </div>

@@ -34,10 +34,10 @@
     @php do_action('get_footer') @endphp
     @include('partials.footer')
 
-    // <a class="top-link hide" href="" id="js-top">
-    //   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
-    //   <span class="screen-reader-text">Back to top</span>
-    // </a>
+    <!-- <a class="top-link hide" href="" id="js-top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
+      <span class="screen-reader-text">Back to top</span>
+    </a> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>

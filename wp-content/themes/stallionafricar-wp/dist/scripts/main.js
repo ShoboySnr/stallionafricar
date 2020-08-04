@@ -247,11 +247,11 @@ Router.prototype.loadEvents = function loadEvents () {
     // });
 
     //toggle mobile nav menu 
-    // $('.menu-item-has-children a').click(function(event) {
-    //   event.preventDefault();
-    //   alert('hello');
-    //   $(this).siblings('.sub-menu').slideToggle();
-    // })
+    $('.mobile-nav .menu-item-has-children a').click(function(event) {
+      event.preventDefault();
+      alert('hello');
+      $(this).siblings('.sub-menu').slideToggle();
+    })
 
     //toggle menu header 
     $(function() {

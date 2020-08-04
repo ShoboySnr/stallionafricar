@@ -5,7 +5,7 @@ $automobiles = App::getCustomCategory($thisCat->term_id, 'automobile', $thisCat-
 
 ?>
 <div class="automobile-category">
-  <div class="container mt-6 xl:mt-20">
+  <div class="container mt-20">
     <div class="flex justify-start w-full flex-wrap mx-0 lg:-mx-4">
       <?php 
         $count = 0;

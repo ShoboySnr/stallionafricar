@@ -2,7 +2,7 @@
 $categories = get_the_terms($post->ID, 'automobile_category');
 $rx_price = get_field('rx_price', $post->ID);
 ?>
-<section id="automobile-single">
+<section id="automobile-single" class="flex justify-center items-center">
     <div class="container">
         <div class="automobile-description">
             <div class="flex justify-start w-full items-start mx-0 xl:-mx-4 flex-wrap">
